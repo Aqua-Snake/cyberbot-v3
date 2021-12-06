@@ -26,7 +26,7 @@ Amalser.addCommand({pattern: 'alive', fromMe: whb, dontAddCommandList: true}, (a
       
       const buttonMessage = {
           contentText: '```'+Config.NBOT+'\n\n```'+Config.ALIVEMSG+'\n',
-          footerText: 'ᴡʜᴀᴛꜱᴀᴘᴘ ᴀᴋɪɴᴀ ©',
+          footerText: 'ᴄʏʙᴇʀ ʙᴏᴛ © ɢʟᴏʙᴀʟ ᴇᴅɪᴛɪᴏɴ',
           buttons: buttons,
           headerType: 1
       }
