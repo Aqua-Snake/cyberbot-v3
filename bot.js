@@ -348,7 +348,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
                                     , MessageType.text);
                             } else {
                                 await conn.sendMessage(conn.user.jid, '*~_________~ CyberBot ~______~*' +
-                                    '\n*🌀 Hey there i am using WhatsApp*' +
+                                    '\n*Some erors had been occured in new update.if any trouble please contact the bot owner.*' +
                                     '\n\n*⚠️ ' + error + '*\n'
                                     , MessageType.text);
                             }
