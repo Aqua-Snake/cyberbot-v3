@@ -7,7 +7,9 @@ const axios = require('axios')
 const Axios = require('axios')
 
 
-Asena.addCommand({pattern: 'song ?(.*)', fromMe: false, desc: 'play song' , dontAddCommandList: true }, async (message, match) => {
+let whb = Config.WORKTYPE == 'public' ? false : true
+
+Asena.addCommand({pattern: 'song ?(.*)', fromMe: whb, desc: 'play song' , dontAddCommandList: true }, async (message, match) => {
 	
 	await message.client.sendMessage(message.jid, '*Im Searching your song  👸🏼 ➾ 🔎*' , MessageType.text, { quoted: message.data });
 	
