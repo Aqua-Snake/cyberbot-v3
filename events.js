@@ -1,18 +1,11 @@
- /* Copyright (C) 2020 Aqua Snake.
+ 
 
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-
-Cyber Bot - Aqua Snake
-*/
-
-
-// We'll keep the commands here.
+// Komutları burada tutacağız.
 var config = require('./config');
 var Commands = [];
 
 function addCommand(info, func) {
-    // A simple function to add commands.
+    // Basit bir fonksiyon, komut eklemek için.
     var types = ['photo', 'image', 'text', 'message'];
 
     var infos = {

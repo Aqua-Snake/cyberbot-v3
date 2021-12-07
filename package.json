@@ -1,7 +1,7 @@
 {
-  "name": "CyberBot",
+  "name": "CyberBot-v3",
   "version": "3.0.1",
-  "description": "CyberBot project - a Whatsapp userbot helping to improve your Whatsapp experience.",
+  "description": "CyberBot-v3 is the Modified Version of CyberBot",
   "main": "./cyberbot-v3/bot.js",
   "scripts": {
     "start": "supervisor -s bot.js"
@@ -14,16 +14,16 @@
     "whatsapp",
     "bot",
     "ai",
-    "cyber",
-    "CyberBot"
+    "CyberBot",
+    "cyberbot-v3"
   ],
-  "author": "AquaSquad / Aqua Snake",
-  "developer": "Aqua Squad / Aqua-Snake",
+  "author": "Aqua-Snake",
+  "developer": "@Aqua-Snake",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/Aqua-Snake/CBot/issues"
+    "url": "https://github.com/Aqua-Snake/cyberbot-v3/issues"
   },
-  "homepage": "https://github.com/Aqua-Snake/CBot#readme",
+  "homepage": "https://github.com/Aqua-Snake/cyberbot-v3#readme",
   "dependencies": {
     "@adiwajshing/baileys": "3.5.2",
     "@lh2020/speedtest-net": "^2.1.1",

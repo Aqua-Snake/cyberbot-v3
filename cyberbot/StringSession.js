@@ -1,10 +1,4 @@
-/* Copyright (C) 2020 Aqua Snake.
-
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-
-Cyber Bot - Aqua Snake
-*/ 
+ 
 
 const fs = require('fs');
 
@@ -13,7 +7,7 @@ class StringSession {
     }
 
     deCrypt(string = undefined) {
-        if ('CBOT_SESSION' in process.env && string === undefined) {
+        if ('AKINA_CODE' in process.env && string === undefined) {
             string = process.env.STRING_SESSION;
         } else if (string !== undefined) {
             if (fs.existsSync(string)) {
@@ -28,7 +22,7 @@ class StringSession {
     }
 
     createStringSession(dict) {
-        return 'CYBERBOT;;;' + Buffer.from(JSON.stringify(dict)).toString('base64');
+        return 'Akina;;;' + Buffer.from(JSON.stringify(dict)).toString('base64');
     }
 }
 
