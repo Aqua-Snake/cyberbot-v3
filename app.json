@@ -221,7 +221,7 @@
             "required": false,
             "value": "default"
         },
-        "DEPLOYER": {
+        "DEPLOPER": {
             "description": "enter your name here",
             "required": false
         },
