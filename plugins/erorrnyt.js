@@ -76,14 +76,14 @@ else if (Config.WORKTYPE == 'public') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'plk-pinky.png',
+            outfile: 'plk-cyberbot.png',
             topText: topText,
             bottomText: bottomText,
 	    fontSize: 150, 	
-            font: './uploads/title/pinky1.ttf',
+            font: './uploads/title/cyberbot1.ttf',
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('plk-pinky.png'), MessageType.image, {filename: 'pinky_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('plk-cyberbot.png'), MessageType.image, {filename: 'cyberbot_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
        }
@@ -112,14 +112,14 @@ else if (Config.WORKTYPE == 'public') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'plk-pinky.png',
+            outfile: 'plk-cyberbot.png',
             topText: topText,
             bottomText: bottomText,
 	    fontSize: 150, 	
-            font: './uploads/title/pinky2.ttf',
+            font: './uploads/title/cyberbot2.ttf',
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('plk-pinky.png'), MessageType.image, {filename: 'pinky_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('plk-cyberbot.png'), MessageType.image, {filename: 'cyberbot_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
        }
@@ -148,14 +148,14 @@ else if (Config.WORKTYPE == 'public') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'plk-pinky.png',
+            outfile: 'plk-cyberbot.png',
             topText: topText,
             bottomText: bottomText,
 	    fontSize: 150, 	
-            font: './uploads/title/pinky3.ttf',
+            font: './uploads/title/cyberbot3.ttf',
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('plk-pinky.png'), MessageType.image, {filename: 'pinky_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('plk-cyberbot.png'), MessageType.image, {filename: 'cyberbot_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
        }
@@ -184,14 +184,14 @@ else if (Config.WORKTYPE == 'public') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'plk-pinky.png',
+            outfile: 'plk-cyberbot.png',
             topText: topText,
             bottomText: bottomText,
 	    fontSize: 150, 	
-            font: './uploads/title/pinky4.ttf',
+            font: './uploads/title/cyberbot4.ttf',
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('plk-pinky.png'), MessageType.image, {filename: 'pinky_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('plk-cyberbot.png'), MessageType.image, {filename: 'cyberbot_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
        }
@@ -220,14 +220,14 @@ else if (Config.WORKTYPE == 'public') {
      //created by afnanplk
 	    memeMaker({
             image: location,         
-            outfile: 'plk-pinky.png',
+            outfile: 'plk-cyberbot.png',
             topText: topText,
             bottomText: bottomText,
 	    fontSize: 150, 	
-            font: './uploads/title/pinky5.ttf',
+            font: './uploads/title/cyberbot5.ttf',
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('plk-pinky.png'), MessageType.image, {filename: 'pinky_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('plk-cyberbot.png'), MessageType.image, {filename: 'cyberbot_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
        }
@@ -256,14 +256,14 @@ else if (Config.WORKTYPE == 'public') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'plk-pinky.png',
+            outfile: 'plk-cyberbot.png',
             topText: topText,
             bottomText: bottomText,
 	    fontSize: 150, 	
-            font: './uploads/title/pinky6.ttf',
+            font: './uploads/title/cyberbot6.ttf',
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('plk-pinky.png'), MessageType.image, {filename: 'pinky_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('plk-cyberbot.png'), MessageType.image, {filename: 'cyberbot_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
        }
@@ -292,14 +292,14 @@ else if (Config.WORKTYPE == 'public') {
      //created by afnanplk
 	    memeMaker({
             image: location,         
-            outfile: 'plk-pinky.png',
+            outfile: 'plk-cyberbot.png',
             topText: topText,
             bottomText: bottomText,
 	    fontSize: 150, 	
-            font: './uploads/title/pinky7.ttf',
+            font: './uploads/title/cyberbot7.ttf',
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('plk-pinky.png'), MessageType.image, {filename: 'pinky_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('plk-cyberbot.png'), MessageType.image, {filename: 'cyberbot_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
        }
@@ -328,14 +328,14 @@ else if (Config.WORKTYPE == 'public') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'plk-pinky.png',
+            outfile: 'plk-cyberbot.png',
             topText: topText,
             bottomText: bottomText,
 	    fontSize: 150, 	
-            font: './uploads/title/pinky7.ttf',
+            font: './uploads/title/cyberbot7.ttf',
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('plk-pinky.png'), MessageType.image, {filename: 'pinky_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('plk-cyberbot.png'), MessageType.image, {filename: 'cyberbot_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
        } //created by afnanplk
@@ -364,14 +364,14 @@ else if (Config.WORKTYPE == 'public') {
     //created by afnanplk
 	    memeMaker({
             image: location,         
-            outfile: 'plk-pinky.png',
+            outfile: 'plk-cyberbot.png',
             topText: topText,
             bottomText: bottomText,
 	    fontSize: 150, 	
-            font: './uploads/title/pinky8.ttf',
+            font: './uploads/title/cyberbot8.ttf',
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('plk-pinky.png'), MessageType.image, {filename: 'pinky_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('plk-cyberbot.png'), MessageType.image, {filename: 'cyberbot_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
        }
@@ -400,14 +400,14 @@ else if (Config.WORKTYPE == 'public') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'plk-pinky.png',
+            outfile: 'plk-cyberbot.png',
             topText: topText,
             bottomText: bottomText,
 	    fontSize: 150, 	
-            font: './uploads/title/pinky9.ttf',
+            font: './uploads/title/cyberbot9.ttf',
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('plk-pinky.png'), MessageType.image, {filename: 'pinky_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
+            await message.client.sendMessage(message.jid, fs.readFileSync('plk-cyberbot.png'), MessageType.image, {filename: 'cyberbot_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
        }

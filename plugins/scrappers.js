@@ -478,11 +478,11 @@ if (config.WORKTYPE == 'private') {
 
             const p_lk = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' 
-            + 'FN:' + Pinky.OA_NAME + '\n' //created afnanplk, please copy this with credit..
-            + 'ORG:pinky julie fam;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=' + Pinky.PHONE + ':' + Pinky.PHONE + ' \n'
+            + 'FN:' + Asena.OA_NAME + '\n' //created afnanplk, please copy this with credit..
+            + 'ORG:Aqua Squad;\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=' + Asena.PHONE + ':' + Asena.PHONE + ' \n'
             + 'END:VCARD'
-await message.client.sendMessage(message.jid, {displayname: "PINKY", vcard: p_lk}, MessageType.contact);
+await message.client.sendMessage(message.jid, {displayname: "cyberbot", vcard: p_lk}, MessageType.contact);
 
   }));
     Asena.addCommand({pattern: 'video ?(.*)', fromMe: true, desc: Lang.VIDEO_DESC}, (async (message, match) => { 
@@ -1145,11 +1145,11 @@ else if (config.WORKTYPE == 'public') {
 
             const p_lk = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' 
-            + 'FN:' + Pinky.OA_NAME + '\n' //created afnanplk, please copy this with credit..
-            + 'ORG:pinky julie fam;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=' + Pinky.PHONE + ':' + Pinky.PHONE + ' \n'
+            + 'FN:' + Asena.OA_NAME + '\n' //created afnanplk, please copy this with credit..
+            + 'ORG:Aqua Squad;\n' 
+            + 'TEL;type=CELL;type=VOICE;waid=' + Asena.PHONE + ':' + Asena.PHONE + ' \n'
             + 'END:VCARD'
-await message.client.sendMessage(message.jid, {displayname: "PINKY", vcard: p_lk}, MessageType.contact);
+await message.client.sendMessage(message.jid, {displayname: "cyberbot", vcard: p_lk}, MessageType.contact);
 
   }));
 
