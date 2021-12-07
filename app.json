@@ -19,7 +19,7 @@
         "LANGUAGE": {
             "description": "Bot language.English => en",
             "required": true,
-            "value": "en"
+            "value": "EN"
         },
         "BGM_FILTER": {
             "description": "If you likes bgm you can write 'true'. Otherwise false",
