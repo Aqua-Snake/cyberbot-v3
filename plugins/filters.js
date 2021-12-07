@@ -1,33 +1,18 @@
-/* Copyright (C) 2020 Aqua Snake.
-
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-
-Cyber Bot - Aqua Snake
-*/
-
-const CBot = require('../events');
-const {MessageType} = require('@adiwajshing/baileys');
+const fs = require('fs')
+const Asena = require('../events');
+const {MessageType, Mimetype } = require('@adiwajshing/baileys');
 const FilterDb = require('./sql/filters');
 const Config = require('../config')
+const jid = Config.DISBGM !== false ? Config.DISBGM.split(',') : [];
+const afn = Config.PLKS !== false ? Config.PLKS.split(',') : [];
 const Language = require('../language');
 const Lang = Language.getString('filters');
 
-var f_rep = ''
-if (Config.LANG == 'TR') f_rep = '*Filtre Ayarlandı ✅*'
-if (Config.LANG == 'EN') f_rep = '*Filter Setted ✅*'
-if (Config.LANG == 'AZ') f_rep = '*Filtr Düzəldildi ✅*'
-if (Config.LANG == 'ES') f_rep = '*Filtro Ajustado ✅*'
-if (Config.LANG == 'HI') f_rep = '*फ़िल्टर सेट ✅*'
-if (Config.LANG == 'RU') f_rep = '*Фильтр настроен ✅*'
-if (Config.LANG == 'ML') f_rep = '*ഫിൽട്ടർ സെറ്റ് ✅*'
-if (Config.LANG == 'ID') f_rep = '*Filter Set ✅*'
-if (Config.LANG == 'PT') f_rep = '*Filtro Ajustado ✅*'
 
-CBot.addCommand({pattern: 'filter ?(.*)', fromMe: true, desc: Lang.FILTER_DESC}, (async (message, match) => {
-    Mat = match[1].match(/[\'\"\“](.*?)[\'\"\“]/gsm);
+Asena.addCommand({pattern: 'filter ?(.*)', fromMe: true, desc: Lang.FILTER_DESC, dontAddCommandList: true}, (async (message, match) => {
+    match = match[1].match(/[\'\"\“](.*?)[\'\"\“]/gsm);
 
-    if (Mat === null) {
+    if (match === null) {
         filtreler = await FilterDb.getFilter(message.jid);
         if (filtreler === false) {
             await message.client.sendMessage(message.jid,Lang.NO_FILTER,MessageType.text)
@@ -36,19 +21,15 @@ CBot.addCommand({pattern: 'filter ?(.*)', fromMe: true, desc: Lang.FILTER_DESC},
             filtreler.map((filter) => mesaj += '```' + filter.dataValues.pattern + '```\n');
             await message.client.sendMessage(message.jid,mesaj,MessageType.text);
         }
-    } else if (message.reply_message && match[1] !== '') {
-        await FilterDb.setFilter(message.jid, match[1].replace(/['"“]+/g, ''), message.reply_message.text);
-        return await message.client.sendMessage(message.jid,f_rep,MessageType.text);
     } else {
-        if (Mat.length < 2) {
-            return await message.client.sendMessage(message.jid,Lang.NEED_REPLY + ' ```.filter "test" "test two"',MessageType.text);
+        if (match.length < 2) {
+            return await message.client.sendMessage(message.jid,Lang.NEED_REPLY + ' ```.filter "sa" "as"',MessageType.text);
         }
-        await FilterDb.setFilter(message.jid, Mat[0].replace(/['"“]+/g, ''), Mat[1].replace(/['"“]+/g, '').replace(/[#]+/g, '\n'), Mat[0][0] === "'" ? true : false);
-        await message.client.sendMessage(message.jid,Lang.FILTERED.format(Mat[0].replace(/['"]+/g, '')),MessageType.text);
+        await FilterDb.setFilter(message.jid, match[0].replace(/['"“]+/g, ''), match[1].replace(/['"“]+/g, '').replace(/[#]+/g, '\n'), match[0][0] === "'" ? true : false);
+        await message.client.sendMessage(message.jid,Lang.FILTERED.format(match[0].replace(/['"]+/g, '')),MessageType.text);
     }
 }));
-
-CBot.addCommand({pattern: 'stop ?(.*)', fromMe: true, desc: Lang.STOP_DESC}, (async (message, match) => {
+Asena.addCommand({pattern: 'stop ?(.*)', fromMe: true, desc: Lang.STOP_DESC, dontAddCommandList: true}, (async (message, match) => {
     match = match[1].match(/[\'\"\“](.*?)[\'\"\“]/gsm);
     if (match === null) {
         return await message.client.sendMessage(message.jid,Lang.NEED_REPLY + '\n*Example:* ```.stop "hello"```',MessageType.text)
@@ -62,32 +43,140 @@ CBot.addCommand({pattern: 'stop ?(.*)', fromMe: true, desc: Lang.STOP_DESC}, (as
         await message.client.sendMessage(message.jid,Lang.DELETED, MessageType.text)
     }
 }));
+    
+if (Config.GEAR == 'one') {  
+    
+Asena.addCommand({on: 'text', fromMe: false}, (async (message, match) => {
+        if(Config.BGMFILTER){
+            var uri = encodeURI(match[1])
+        let banned = jid.find( Jid => Jid === message.jid);
+        if(banned !== undefined) return
+        if (!!message.mention && message.mention[0] == '919072790587@s.whatsapp.net') {
+await message.client.sendMessage(message.jid, fs.readFileSync('./uploads/mention.mp3'), MessageType.audio, { mimetype: Mimetype.mp4Audio,duration: Config.SAID, quoted : message.data, ptt: true})
+        }
+        if (!!message.mention && message.mention[0] == Config.MENTION) {
+await message.client.sendMessage(message.jid, fs.readFileSync('uploads/mention.mp3'), MessageType.audio, { mimetype: Mimetype.mp4Audio,duration: Config.SAID, quoted : message.data, ptt: true})
+        }
+        
+const array = ['name entha','admin','hi','hello','help','gota','gas','ammo','helo','sex','Hi','mk','gotabaya','moko karanne','gahannada','hiruwa','adarei','huththo','kohomada','bich','na','gemada','apoi','ai']
+array.map( async (a) => {
+let pattern = new RegExp(`\\b${a}\\b`, 'g');
+if(pattern.test(message.message)){
+       await message.client.sendMessage(message.jid, fs.readFileSync('./uploads/' + a + '.mp3'), MessageType.audio, { mimetype: Mimetype.mp4Audio,duration: Config.SAID, quoted: message.data, ptt: true})
+}
+});
+    }
 
-
-CBot.addCommand({on: 'text', fromMe: false}, (async (message, match) => {
     var filtreler = await FilterDb.getFilter(message.jid);
     if (!filtreler) return; 
-    return filtreler.map(
+    filtreler.map(
         async (filter) => {
             pattern = new RegExp(filter.dataValues.regex ? filter.dataValues.pattern : ('\\b(' + filter.dataValues.pattern + ')\\b'), 'gm');
-            if (message.message == filter.dataValues.pattern) {
-                await new Promise(r => setTimeout(r, 900));
-                return await message.client.sendMessage(message.jid,filter.dataValues.text, MessageType.text, {quoted: message.data});
+            if (pattern.test(message.message)) {
+                await message.client.sendMessage(message.jid,filter.dataValues.text, MessageType.text, {quoted: message.data});
             }
         }
     );
 }));
-CBot.addCommand({on: 'text', fromMe: true, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+}
+    if (Config.GEAR == 'two') {    
+    Asena.addCommand({on: 'text', fromMe: false}, (async (message, match) => {   
+        if(Config.BGMFILTER){
+        let banned = jid.find( Jid => Jid === message.jid);
+        if(banned !== undefined) return
+        if (!!message.mention && message.mention[0] == '919072790587@s.whatsapp.net') {
+await message.client.sendMessage(message.jid, fs.readFileSync('./Amalserv2/mention.mp3'), MessageType.audio, { mimetype: Mimetype.mp4Audio,duration: Config.SAID, contextInfo: { forwardingScore: 5, isForwarded: true }, quoted : message.data, ptt: true})
+        }
+        if (!!message.mention && message.mention[0] == Config.MENTION) {
+await message.client.sendMessage(message.jid, fs.readFileSync('Amalserv2/mention.mp3'), MessageType.audio, { mimetype: Mimetype.mp4Audio,duration: Config.SAID, quoted : message.data, ptt: true})
+        }
+        var uri = encodeURI(match[1])
+const array = ['name entha','admin','help','hi','hello','gota','gas','ammo','helo','sex','Hi','mk','gotabaya','moko karanne','gahannada','hiruwa','adarei','huththo','kohomada','bich','na','gemada','apoi','ai']
+array.map( async (a) => {
+let pattern = new RegExp(`\\b${a}\\b`, 'g');
+if(pattern.test(message.message)){
+       await message.client.sendMessage(message.jid, fs.readFileSync('./Amalserv2/' + a + '.mp3'), MessageType.audio,{ mimetype: Mimetype.mp4Audio,duration: Config.SAID, ptt: true,quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(message.jid ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": Config.BOT + '\n', "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('./photo/vava.png')}}}});
+}
+});
+    }
+
     var filtreler = await FilterDb.getFilter(message.jid);
     if (!filtreler) return; 
-    return filtreler.map(
+    filtreler.map(
         async (filter) => {
             pattern = new RegExp(filter.dataValues.regex ? filter.dataValues.pattern : ('\\b(' + filter.dataValues.pattern + ')\\b'), 'gm');
-            var fo = message.message.replace('$', '')
-            if (fo == filter.dataValues.pattern && message.message.startsWith('$')) {
-                await new Promise(r => setTimeout(r, 100));
-                return await message.client.sendMessage(message.jid,filter.dataValues.text, MessageType.text, {quoted: message.data});
+            if (pattern.test(message.message)) {
+                await message.client.sendMessage(message.jid,filter.dataValues.text, MessageType.text, {quoted: message.data});
             }
         }
     );
 }));
+}
+Asena.addCommand({on: 'text', fromMe: false}, (async (message, match) => {
+    if(Config.DOCUMENT){
+    let banned = jid.find( Jid => Jid === message.jid);
+    if(banned !== undefined) return
+    if (!!message.mention && message.mention[0] == '919895828468@s.whatsapp.net') {
+await message.client.sendMessage(message.jid, fs.readFileSync('./docpdf/mention.pdf'), MessageType.document, { mimetype: Mimetype.pdf, quoted : message.data, ptt: false})
+    }
+const array = ['c2020i','c2012ii','c2012i','c2013ii','c2013i','c2014ii','c2014i','c2015ii','c2015i','c2020ii','c2017ii','c2017i','c2018ii','c2018i','c2019ii','c2019i']
+array.map( async (a) => {
+let pattern = new RegExp(`\\b${a}\\b`, 'g');
+if(pattern.test(message.message)){
+   await message.client.sendMessage(message.jid, fs.readFileSync('./docpdf/' + a + '.pdf'), MessageType.document, { mimetype: Mimetype.pdf, quoted: message.data, ptt: false})
+}
+});
+}
+
+var filtreler = await FilterDb.getFilter(message.jid);
+if (!filtreler) return; 
+filtreler.map(
+    async (filter) => {
+        pattern = new RegExp(filter.dataValues.regex ? filter.dataValues.pattern : ('\\b(' + filter.dataValues.pattern + ')\\b'), 'gm');
+    }
+);
+}));
+     async function checkUsAdmin(message, user = message.data.participant) {
+    var grup = await message.client.groupMetadata(message.jid);
+    var sonuc = grup['participants'].map((member) => {     
+        if (member.jid.split("@")[0] == user.split("@")[0] && member.isAdmin) return true; else; return false;
+    });
+    return sonuc.includes(true);
+}
+async function checkImAdmin(message, user = message.client.user.jid) {
+    var grup = await message.client.groupMetadata(message.jid);
+    var sonuc = grup['participants'].map((member) => {     
+        if (member.jid.split("@")[0] == user.split("@")[0] && member.isAdmin) return true; else; return false;
+    });
+    return sonuc.includes(true);
+}
+ 
+     Asena.addCommand({on: 'text', fromMe: false,onlyGroup: true}, (async (message, match) => {
+
+        if(Pinky.afnp !== 'false'){
+        let banned = jid.find( Jid => Jid === message.jid);
+        if(banned !== undefined) return
+        
+const array = afnp
+array.map( async (a) => {
+let pattern = new RegExp(`\\b${a}\\b`, 'g');
+if(pattern.test(message.message)){
+            var us = await checkUsAdmin(message)
+            var im = await checkImAdmin(message)
+            if (!im) return;
+            if (us) return;
+    await message.client.sendMessage(message.jid,Lang.KICK, MessageType.text, {quoted: message.data });  
+    await message.client.groupRemove(message.jid, [message.data.participant]);                
+}
+});
+    }
+
+    var filtreler = await FilterDb.getFilter(message.jid);
+    if (!filtreler) return; 
+    filtreler.map(
+        async (filter) => {
+            pattern = new RegExp(filter.dataValues.regex ? filter.dataValues.pattern : ('\\b(' + filter.dataValues.pattern + ')\\b'), 'gm');
+        }
+    );
+}));
+

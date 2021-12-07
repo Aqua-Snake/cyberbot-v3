@@ -1,12 +1,6 @@
-/* Copyright (C) 2020 Aqua Snake.
 
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
 
-Cyber Bot - Aqua Snake
-*/
-
-const CBot = require('../events')
+const Asena = require('../events')
 const { MessageType } = require('@adiwajshing/baileys')
 const axios = require('axios')
 const cn = require('../config');
@@ -18,7 +12,7 @@ const Tlang = Language.getString('tiktok')
 
 if (cn.WORKTYPE == 'private') {
 
-    CBot.addCommand({ pattern: 'insta ?(.*)', fromMe: true, desc: Lang.DESC }, (async (message, match) => {
+    Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: true, desc: Lang.DESC }, (async (message, match) => {
         if (match[0].includes('install')) return;
         if (match[1] === '') return await message.client.sendMessage(message.jid, Lang.NEED_WORD, MessageType.text, { quoted: message.data });
         if (!match[1].includes('www.instagram.com')) return await message.client.sendMessage(message.jid, Lang.NEED_WORD, MessageType.text, { quoted: message.data });
@@ -43,7 +37,8 @@ if (cn.WORKTYPE == 'private') {
 
     }));
 
-    CBot.addCommand({ pattern: 'tiktok ?(.*)', fromMe: true, desc: Tlang.TİKTOK }, async (message, match) => {
+    /*
+    Asena.addCommand({ pattern: 'tiktok ?(.*)', fromMe: true, desc: Tlang.TİKTOK }, async (message, match) => {
 
         const userName = match[1]
 
@@ -63,7 +58,7 @@ if (cn.WORKTYPE == 'private') {
             })
 
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
-              caption: 'Made by CBot',
+              caption: 'Made by WhatsAsena',
             })
           })
           .catch(
@@ -71,10 +66,11 @@ if (cn.WORKTYPE == 'private') {
           )
       },
     )
+    */
 }
 else if (cn.WORKTYPE == 'public') {
 
-    CBot.addCommand({ pattern: 'insta ?(.*)', fromMe: false, desc: Lang.DESC }, (async (message, match) => {
+    Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: false, desc: Lang.DESC }, (async (message, match) => {
         if (match[0].includes('install')) return;
         if (match[1] === '') return await message.client.sendMessage(message.jid, Lang.NEED_WORD, MessageType.text, { quoted: message.data });
         if (!match[1].includes('www.instagram.com')) return await message.client.sendMessage(message.jid, Lang.NEED_WORD, MessageType.text, { quoted: message.data });
@@ -98,7 +94,7 @@ else if (cn.WORKTYPE == 'public') {
         });
 
     }));
-    CBot.addCommand({ pattern: 'insta ?(.*)', fromMe: true, desc: Lang.DESC, dontAddCommandList: true }, (async (message, match) => {
+    Asena.addCommand({ pattern: 'ig ?(.*)', fromMe: true, desc: Lang.DESC, dontAddCommandList: true }, (async (message, match) => {
         if (match[0].includes('install')) return;
         if (match[1] === '') return await message.client.sendMessage(message.jid, Lang.NEED_WORD, MessageType.text, { quoted: message.data });
         if (!match[1].includes('www.instagram.com')) return await message.client.sendMessage(message.jid, Lang.NEED_WORD, MessageType.text, { quoted: message.data });
@@ -122,7 +118,8 @@ else if (cn.WORKTYPE == 'public') {
         });
 
     }));
-   CBot.addCommand({ pattern: 'tiktok ?(.*)', fromMe: false, desc: Tlang.TİKTOK }, async (message, match) => {
+    /*
+    Asena.addCommand({ pattern: 'tiktok ?(.*)', fromMe: false, desc: Tlang.TİKTOK }, async (message, match) => {
 
         const userName = match[1]
 
@@ -142,7 +139,7 @@ else if (cn.WORKTYPE == 'public') {
             })
 
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
-              caption: 'Made by CyberBot',
+              caption: 'Made by WhatsAsena',
             })
           })
           .catch(
@@ -150,7 +147,7 @@ else if (cn.WORKTYPE == 'public') {
           )
       },
     )
-    CBot.addCommand({ pattern: 'tiktok ?(.*)', fromMe: true, desc: Tlang.TİKTOK }, async (message, match) => {
+    Asena.addCommand({ pattern: 'tiktok ?(.*)', fromMe: true, desc: Tlang.TİKTOK }, async (message, match) => {
 
         const userName = match[1]
 
@@ -170,7 +167,7 @@ else if (cn.WORKTYPE == 'public') {
             })
 
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
-              caption: 'Made by CBot',
+              caption: 'Made by WhatsAsena',
             })
           })
           .catch(
@@ -178,4 +175,5 @@ else if (cn.WORKTYPE == 'public') {
           )
       },
     )
+    */
 }

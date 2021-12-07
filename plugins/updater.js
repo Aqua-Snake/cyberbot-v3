@@ -1,14 +1,8 @@
-/* Copyright (C) 2020 Aqua Snake.
-
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-
-Cyber Bot - Aqua Snake
-*/
+ 
 
 const simpleGit = require('simple-git');
 const git = simpleGit();
-const CBot = require('../events');
+const Asena = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const Config = require('../config');
 const exec = require('child_process').exec;
@@ -20,7 +14,7 @@ const Language = require('../language');
 const Lang = Language.getString('updater');
 
 
-CBot.addCommand({pattern: 'update$', fromMe: true, desc: Lang.UPDATER_DESC}, (async (message, match) => {
+Asena.addCommand({pattern: 'update$', fromMe: true, desc: Lang.UPDATER_DESC}, (async (message, match) => {
     await git.fetch();
     var commits = await git.log([Config.BRANCH + '..origin/' + Config.BRANCH]);
     if (commits.total === 0) {
@@ -32,10 +26,10 @@ CBot.addCommand({pattern: 'update$', fromMe: true, desc: Lang.UPDATER_DESC}, (as
         var degisiklikler = Lang.NEW_UPDATE;
         commits['all'].map(
             (commit) => {
-                degisiklikler += '🛠 [' + commit.date.substring(0, 10) + ']: ' + commit.message + ' <' + commit.author_name + '>\n';
+                degisiklikler += '🔹' + commit.date.substring(0, 10) + ': \n' + commit.message + ' \n⚝➤' + commit.author_name + '➽✓⛨ \n\n';
             }
         );
-        
+        // UPDATE IMG ADD
         await message.client.sendMessage(
             message.jid,
             degisiklikler + '```', MessageType.text
@@ -43,7 +37,7 @@ CBot.addCommand({pattern: 'update$', fromMe: true, desc: Lang.UPDATER_DESC}, (as
     }
 }));
 
-CBot.addCommand({pattern: 'update now$', fromMe: true, desc: Lang.UPDATE_NOW_DESC}, (async (message, match) => {
+Asena.addCommand({pattern: 'update now$', fromMe: true, desc: Lang.UPDATE_NOW_DESC}, (async (message, match) => {
     await git.fetch();
     var commits = await git.log([Config.BRANCH + '..origin/' + Config.BRANCH]);
     if (commits.total === 0) {
@@ -63,8 +57,10 @@ CBot.addCommand({pattern: 'update now$', fromMe: true, desc: Lang.UPDATE_NOW_DES
                 return await message.client.sendMessage(
                     message.jid,Lang.IN_AF, MessageType.text);
             }
+
             git.fetch('upstream', Config.BRANCH);
             git.reset('hard', ['FETCH_HEAD']);
+
             var git_url = app.git_url.replace(
                 "https://", "https://api:" + Config.HEROKU.API_KEY + "@"
             )
@@ -73,8 +69,10 @@ CBot.addCommand({pattern: 'update now$', fromMe: true, desc: Lang.UPDATE_NOW_DES
                 await git.addRemote('heroku', git_url);
             } catch { console.log('heroku remote ekli'); }
             await git.push('heroku', Config.BRANCH);
+
             await message.client.sendMessage(
                 message.jid,Lang.UPDATED, MessageType.text);
+
             await message.sendMessage(Lang.AFTER_UPDATE);
             
         } else {
