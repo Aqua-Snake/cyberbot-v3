@@ -1,4 +1,3 @@
-
 {
     "__ASENAJSON__": true,
     "LANGUAGE": "English",
@@ -6,13 +5,11 @@
     "AUTHOR": "AsenaDev",
     "STRINGS": {
         "_asena": {
-            "EXAMPLE": "Eg:- ",
+            "COMMAND": "Command",
+            "DESC": "Description",
+            "EXAMPLE": "Example",
             "NOT_FOUND": "*I couldnt find a command like this*",
-            "PLKADMIN": ".report you are not admin \n\n 🇩​🇴​🇳​🇹​ 🇹​🇷​🇾​ 🇦​🇬​🇦​🇮​🇳​, 🇮​🇫​ 🇾​🇴​🇺​ 🇹​🇷​🇾​ 🇾​🇴​🇺​ 🇼​🇮​🇱​🇱​ 🇧​🇪​ 🇷​🇪​🇲​🇴​🇻​🇪​🇩​ 🇧​🇾​ 🇦​🇩​🇲​🇮​🇳​🇸​",
-            "WARN": "Warn",
-            "REVOKED": "```Group link revoked!```",
-            "REVOKE_DESC": "```Revokes group link```"
-            
+            "WARN": "Warn"
         },
         "_plugin": {
             "INSTALL_DESC": "Install external plugins.",
@@ -28,25 +25,24 @@
             "NEED_PLUGIN": "```Please enter a Plugin! Example: .plugin __test```",
             "NOT_FOUND_PLUGIN": "```Maybe you have installed such a plugin, or maybe not. But it sure isn't right now.```",
             "DELETED": "*✅ Module successfully deleted!*",
-            "WARN": "Get plugins only from t.me/remasterplugin channel."
+            "WARN": "Get plugins only from bot owner recomended."
         },
         "admin": {
-            "BAN_DESC": "Ban someone in the group. Reply to mesrge or tag a person to use command.",
+            "BAN_DESC": "Ban someone in the group. Reply to message or tag a person to use command.",
             "IM_NOT_ADMIN": "*I am not admin in this group!*",
             "BANNED": "kicked out of the group!",
             "GIVE_ME_USER": "*Give me a user!*",
             "ADD_DESC": "Adds someone to the group.",
             "ADDED": "added to the group!",
             "ALREADY_PROMOTED": "```How can I make someone admin who is already admin?```",
-            "PLKADMIN": ".report you are not admin \n\n 🇩​🇴​🇳​🇹​ 🇹​🇷​🇾​ 🇦​🇬​🇦​🇮​🇳​ 🇮​🇫​ 🇾​🇴​🇺​ 🇹​🇷​🇾​ 🇾​🇴​🇺​ 🇼​🇮​🇱​🇱​ 🇧​🇪​ 🇷​🇪​🇲​🇴​🇻​🇪​🇩​ 🇧​🇾​ 🇦​🇩​🇲​🇮​🇳​🇸​",
             "PROMOTED": "```, admin role was given!```",
             "PROMOTE_DESC": "Makes any person an admin.",
             "DEMOTE_DESC": "Takes the authority of any admin.",
             "ALREADY_NOT_ADMIN": "```How can I make someone admin who is already admin?```",
             "DEMOTED": "```, has been demoted!```",
-            "MUTE_DESC": "Mute the group chat. Only the admins can send a mesrge.\n⌨️ Example: .mute & .mute 5m etc",
+            "MUTE_DESC": "Mute the group chat. Only the admins can send a message.\n⌨️ Example: .mute & .mute 5m etc",
             "MUTED": "```Group chat muted!```",
-            "UNMUTE_DESC": "Unmute the group chat. Anyone can send a mesrge.",
+            "UNMUTE_DESC": "Unmute the group chat. Anyone can send a message.",
             "UNMUTED": "```The group chat has unmuted!```",
             "INVITE_DESC": "Provides the group's invitation link.",
             "INVITE": "```Invitation link: ```"
@@ -54,9 +50,6 @@
         "locate": {
             "L_DESC": "It send your location.",
             "L_WARN": "Please open your location before using command!"
-        },
-        "news": {
-            "NEWS_DESC": "It send News."
         },
         "afk": {
             "AFK_DESC": "It makes you AFK - Away From Keyboard.",
@@ -77,21 +70,21 @@
             "GIVE_ME_CODE": "*Give me a code!*"
         },
         "nekobin": {
-            "NEKO_DESC": "Replied mesrges will be added to nekobin.com.",
-            "NEED_REPLY": "```Please reply to a mesrge!```",
-            "MUST_TEXT": "```Please reply to any mesrge```"
+            "NEKO_DESC": "Replied messages will be added to nekobin. com.",
+            "NEED_REPLY": "```Please reply to a message!```",
+            "MUST_TEXT": "```Please reply to any message```"
         },
         "heroku": {
-            "RESTART_DESC": "Restart CyberBot",
+            "RESTART_DESC": "Restart Cyber Bot",
             "RESTART_MSG": "```Restarting...```",
-            "SHUTDOWN_DESC": "Shutdown CyberBot",
+            "SHUTDOWN_DESC": "Shutdown Cyber Bot",
             "SHUTDOWN_MSG": "```Shutting down ⛔```",
-            "DYNO_DESC": "Check heroku dyno urge",
+            "DYNO_DESC": "Check heroku dyno usage",
             "DYNO_TOTAL": "```Total Quota```",
             "DYNO_USED": "```Quota used```",
             "PERCENTAGE": "```Percentage```",
             "DYNO_LEFT": "```Remaining```",
-            "GR_DEL": "*Greetings Mesrge Set!*\n*Type* ```.goodbye delete & .welcome delete``` *to remove!*",
+            "GR_DEL": "*Greetings Message Set!*\n*Type* ```.goodbye delete & .welcome delete``` *to remove!*",
             "SETVAR_DESC": "Set heroku config var",
             "SET_SUCCESS": "Successfully set ```{} ➜ {}```",
             "KEY_VAL_MISSING": "```Either Key or Value is missing```",
@@ -102,7 +95,7 @@
             "NOT_FOUND": "```no results found for this key```",
             "SUCC": "*Successfully Setted Up ✅* \n*Please wait a little while.*",
             "SUCC_AF": "*To restore, use* ```default```",
-            "DEGİS_NONE": "```Please Enter Any Module Name!``` \n\n*.degis afk*\n*.degis alive* << **Variables** >> \n_{pp}: You only need to use it once. Adds your profile photo to the mesrge._ \n_{info}: Shows your status._ \n_{version}: Shows the version of the bot._ \n_{plugin}: Shows the plugin channel._\n*.degis ban*\n*.degis add*\n*.degis mute*\n*.degis unmute*\n*.degis promote*\n*.degis demote*\n*.degis welcome* \n*.degis goodbye* \n*.degis kickme*\n*.degis block*\n*.degis unblock*",
+            "DEGİS_NONE": "```Please Enter Any Module Name!``` \n\n*.degis afk*\n*.degis alive* << **Variables** >> \n_{pp}: You only need to use it once. Adds your profile photo to the message._ \n_{info}: Shows your status._ \n_{version}: Shows the version of the bot._ \n_{plugin}: Shows the plugin channel._\n*.degis ban*\n*.degis add*\n*.degis mute*\n*.degis unmute*\n*.degis promote*\n*.degis demote*\n*.degis welcome* \n*.degis goodbye* \n*.degis kickme*\n*.degis block*\n*.degis unblock*",
             "WR": "*Please use the modules that exists!*",
             "DEGİS_DESC": "Changes the text of modules like alive, afk etc.."       
         },
@@ -118,29 +111,28 @@
             "DELETED": "*✅ The filter was successfully deleted!*"
         },
         "greetings": {
-            "WELCOME_DESC": "It sets the welcome mesrge. If you leave it blank it shows the welcome mesrge.",
-            "NOT_SET_WELCOME": "*You don't set the welcome mesrge yet.!*\n**To set:** ```.welcome hi && hi#how are you? \n to add  group description in welcome mesrge use {gpdesc} \n to add group name use {gphead} \n to add group maker name use {gpmaker} \n to add bot name use {owner} \n to add exact indian time use {time} ```",
-            "WELCOME_ALREADY_SETTED": "*✅ Welcome mesrge already set!*\n*Mesrge:* ```",
-            "NEED_WELCOME_TEXT": "*You must write a mesrge to set up the welcome mesrge.*\n*Example:* ```.welcome hi && hi#how are you?```",
-            "WELCOME_DELETED": "*✅ Welcome mesrge has been deleted successfully!*",
-            "WELCOME_SETTED": "*✅ Welcome mesrge has been set successfully!*",
-            "PLKADMIN": ".report you are not admin \n\n 🇩​🇴​🇳​🇹​ 🇹​🇷​🇾​ 🇦​🇬​🇦​🇮​🇳​ 🇮​🇫​ 🇾​🇴​🇺​ 🇹​🇷​🇾​ 🇾​🇴​🇺​ 🇼​🇮​🇱​🇱​ 🇧​🇪​ 🇷​🇪​🇲​🇴​🇻​🇪​🇩​ 🇧​🇾​ 🇦​🇩​🇲​🇮​🇳​🇸​",
-            "GOODBYE_DESC": "Sets the goodbye mesrge. If you leave blank, it show's the goodbye mesrge.",
-            "NOT_SET_GOODBYE": "*You didn't set a goodbye mesrge!*\n*To set:* ```.goodbye bye && bye#see ya \n to add  group description in welcome mesrge use {gpdesc} \n to add group name use {gphead} \n to add group maker name use {gpmaker} \n to add bot name use {owner} \n to add exact indian time use {time} ```",
-            "GOODBYE_ALREADY_SETTED": "*✅ Goodbye mesrge has been set!*\n*Mesrge:* ```",
-            "NEED_GOODBYE_TEXT": "*You must write a mesrge to set up the goodbye mesrge.*\n*Example:* ```.goodbye bye && bye#see ya```",
-            "GOODBYE_DELETED": "*✅ Goodbye mesrge has been deleted successfully!*",
-            "GOODBYE_SETTED": "*✅ Goodbye mesrge has been setted successfully!*"
+            "WELCOME_DESC": "It sets the welcome message. If you leave it blank it shows the welcome message.",
+            "NOT_SET_WELCOME": "*You don't set the welcome message yet.!*\n**To set:** ```.welcome hi && hi#how are you?```",
+            "WELCOME_ALREADY_SETTED": "*✅ Welcome message already set!*\n*Message:* ```",
+            "NEED_WELCOME_TEXT": "*You must write a message to set up the welcome message.*\n*Example:* ```.welcome hi && hi#how are you?```",
+            "WELCOME_DELETED": "*✅ Welcome message has been deleted successfully!*",
+            "WELCOME_SETTED": "*✅ Welcome message has been set successfully!*",
+            "GOODBYE_DESC": "Sets the goodbye message. If you leave blank, it show's the goodbye message.",
+            "NOT_SET_GOODBYE": "*You didn't set a goodbye message!*\n*To set:* ```.goodbye bye && bye#see ya```",
+            "GOODBYE_ALREADY_SETTED": "*✅ Goodbye message has been set!*\n*Message:* ```",
+            "NEED_GOODBYE_TEXT": "*You must write a message to set up the goodbye message.*\n*Example:* ```.goodbye bye && bye#see ya```",
+            "GOODBYE_DELETED": "*✅ Goodbye message has been deleted successfully!*",
+            "GOODBYE_SETTED": "*✅ Goodbye message has been setted successfully!*"
         },
         "lydia": {
             "ADDLYDIA_DESC": "Activates Lydia (AI) for the user.",
-            "NEED_REPLY": "```Please respond to a user's mesrge!```",
+            "NEED_REPLY": "```Please respond to a user's message!```",
             "COFFEEHOUSE": "```You haven't defined the Coffehouse API Key! ```",
             "ENABLED_LYDIA": "```Lydia has been activated for this user!```",
-            "RMLYDIA_DESC": "Makes Lydia dirbled for the user.",
+            "RMLYDIA_DESC": "Makes Lydia disabled for the user.",
             "ALREADY_EMPTY": "```Your user list is already empty!```",
             "NOT_ADDED": "```You haven't added this user already!```",
-            "DIrBLED": "```Lydia has been dirbled for this user!```"
+            "DISABLED": "```Lydia has been disabled for this user!```"
         },
         "memes": {
             "MEMES_DESC": "Photo memes you replied to.",
@@ -178,37 +170,27 @@
             "RBGING": "```Removing background...```"
         },
         "scrapers": {
-            "TRANSLATE_DESC": "It translates with Google Translate. You must reply any mesrge.",
-            "TRANSLATE_UrGE": ".trt tr it (From Turkish to Italian)",
-            "NEED_REPLY": "```Please reply to any mesrge!```",
+            "TRANSLATE_DESC": "It translates with Google Translate. You must reply any message.",
+            "TRANSLATE_USAGE": ".trt tr it (From Turkish to Italian)",
+            "NEED_REPLY": "```Please reply to any message!```",
             "LANG": "Language",
-            "SING_DESC": "It sings song that you have written",
-            "CURRENCY_DESC": "It coverts currency",
             "FROM": "Translated Language",
             "RESULT": "Translate",
-            "DEVICE": "It shows the details of requested devices",
             "TRANSLATE_ERROR": "❌ An error occured while translating!*",
             "CURRENCY_ERROR": "```Syntax error! Example: .currency 1 TRY USD```",
-            "INVALID_CURRENCY": "```Foreign currency tranrction failed. You wrote wrong currency!```",
-            "UNKNOWN_ERROR": "```An error occurred. Foreign currency tranrction failed!```",
+            "INVALID_CURRENCY": "```Foreign currency transaction failed. You wrote wrong currency!```",
+            "UNKNOWN_ERROR": "```An error occurred. Foreign currency transaction failed!```",
             "TTS_DESC": "It converts text to sound.",
-            "NUMBER": "get the original number of creator",
             "TTS_ERROR": "```Error, Speech example of your sentence couldn't be made!```",
             "SONG_DESC": "Uploads the song you wrote.",
-            "ISONG_DESC": "Uploads the song you wrote for ios users.",
             "NEED_TEXT_SONG": "*Please write a song!*\n*Example:* ```.song eminem - rap god```",
             "NO_RESULT": "*I couldn't find anything :(*",
-            "DOWNLOADING_SONG": "Downloading",
-            "NAMEY": "NAME",
-            "URL": "LINK",
-            "THUMB": "THUMB",
-            "RATING": "RATING",
-            "UPLOADING_SONG": "*Uploading*",
+            "DOWNLOADING_SONG": "```Downloading your song...```",
+            "UPLOADING_SONG": "```Uploading your song...```",
             "VIDEO_DESC": "Downloads video from YouTube.",
             "NEED_VIDEO": "*Please write a video link!*\n*Example:* ```.video https://www.youtube.com/watch?v=nAFlVm5qeBc```",
-            "DOWNLOADING_VIDEO": "*Downloading*",
-            "UPLOADING_VIDEO": "*Uploading*",
-            "LOADING": "*Downloading video*",
+            "DOWNLOADING_VIDEO": "```Downloading your video...```",
+            "UPLOADING_VIDEO": "```Uploading your video...```",
             "YT_DESC": "It searchs on YouTube.",
             "NEED_WORDS": "```Please write a few words!```",
             "GETTING_VIDEOS": "```I'm bringing videos...```",
@@ -221,37 +203,37 @@
         "sticker": {
             "STICKER_DESC": "It converts your replied photo or video to sticker.",
             "NEED_REPLY": "*Reply to a photo or video!*",
-            "DOWNLOADING": "```Converting..✨️```"
+            "DOWNLOADING": "```Media downloading & converting to sticker...```"
         },
         "system_stats": {
             "ALIVE_DESC": "Does bot work?",
             "SYSD_DESC": "Shows the system properties."
         },
         "tagall": {
-            "TAGALL_DESC": "Tags everyone in the group.",
+            "TAGALL_DESC": "Tags everyone in the group.(Admin Mode)",
+            "HIDETAG_DESC": "Tags everyone in the group.(Member Mode)",
             "ADMİN": "*I am not admin in this group!*",
             "SCAN": "Checks whether the entered number is registered on WhatApp.",
             "NO": "*Please Enter Any Phone Number!*\n*Example:* ```.scan 90xxxx```",
-            "SUC": "*Numbered Person Uses Whatrpp! ✅*",
-            "UNSUC": "*Numbered Person Does Not Use Whatrpp! ❌*",
-            "PLKADMIN": ".report you are not admin \n\n 🇩​🇴​🇳​🇹​ 🇹​🇷​🇾​ 🇦​🇬​🇦​🇮​🇳​, 🇮​🇫​ 🇾​🇴​🇺​ 🇹​🇷​🇾​ 🇾​🇴​🇺​ 🇼​🇮​🇱​🇱​ 🇧​🇪​ 🇷​🇪​🇲​🇴​🇻​🇪​🇩​ 🇧​🇾​ 🇦​🇩​🇲​🇮​🇳​🇸​",
+            "SUC": "*Numbered Person Uses WhatsApp! ✅*",
+            "UNSUC": "*Numbered Person Does Not Use WhatsApp! ❌*",
             "TAGADMİN": "Tags group admins.",
             "REPORT": "Sends reports to group admins.",
-            "USER": "*===== Warning ⚠️ =====*\n\n*User:* ",
-            "REASON": "\n*Warn 👉 :* ",
-            "REPLY": "*Please Respond to User's Mesrge to Report!*"
+            "USER": "=== ```Report``` ===\n\n*User:* ",
+            "REASON": "\n*Reason:* ",
+            "REPLY": "*Please Respond to User's Message to Report!*"
         },
         "updater": {
             "UPDATER_DESC": "Checks the update.",
             "UPDATE": "*Your bot is completely up-to-date!*",
-            "NEW_UPDATE": "*New update available for Bot!*\n\n*To update Bot give this command: .update now*\n\n*Supporting  First: https://wa.link/coi03a*\n\nChanges:\n```",
+            "NEW_UPDATE": "*New update available for Bot!*\n\nChanges:\n```",
             "UPDATE_NOW_DESC": "It makes updates.",
-            "UPDATING": "Updating..💌",
-            "INVALID_HEROKU": "*❌ Your Heroku app name or api key wrong!*",
-            "UPDATED": "*Updated ✅️*",
-            "UPDATED_LOCAL": "*✅ Updated!*",
-            "AFTER_UPDATE": "*CyberBot Restarting ✅️*",
-            "IN_AF": "*Please check* ```HEROKU_APP_NAME``` *and* ```app name``` *They must be rme.*\n*If these two values ​​are the rme, please restore* ```HEROKU_API_KEY```\n\n_To access these settings, use Heroku >> App >> Settings >> Reavel Config Vars_\n_To renew your API key, follow these steps, Heroku >> Account >> API Key then replace old api key in config vars._"
+            "UPDATING": "_Updating..._",
+            "INVALID_HEROKU": "*❌ Your Heroku information is wrong!*",
+            "UPDATED": "*✅ Successfully Updated!*",
+            "UPDATED_LOCAL": "*✅ Successfully Updated!*",
+            "AFTER_UPDATE": "*💬 Cyber Bot Restarting Automatically!*",
+            "IN_AF": "*Please check* ```HEROKU_APP_NAME``` *and* ```app name``` *They must be same.*\n*If these two values ​​are the same, please restore* ```HEROKU_API_KEY```\n\n_To access these settings, use Heroku >> App >> Settings >> Reavel Config Vars_\n_To renew your API key, follow these steps, Heroku >> Account >> API Key then replace old api key in config vars._"
         },
         "whois": {
             "PL_DESC": "Displays metadata data of group or person.",
@@ -263,30 +245,20 @@
             "ST": "*Person Status:* "
         },
         "log": {
-            "LOG": "rves the mesrge you reply to your private number.",
-            "REPLY": "*Please Reply To Any Mesrge!*",
+            "LOG": "Saves the message you reply to your private number.",
+            "REPLY": "*Please Reply To Any Message!*",
             "ANIM": "Does not support animated stickers!",
-            "HEAD": "```===== [LOGGED MESrGE] =====```\n\n",
+            "HEAD": "```===== [LOGGED MESSAGE] =====```\n\n",
             "USER": " From User Number \n",
             "FROM": " From the group with ID, ",
-            "MSG": "Mesrge: \n\n",
-            "SUC": "*Mesrge Successfully rved to LOG!*"
+            "MSG": "Message: \n\n",
+            "SUC": "*Message Successfully Saved to LOG!*"
         },
         "weather": {
             "WEATHER_DESC": "Shows the weather.",
             "NEED_LOCATION": "* Please write a location!*\n*Example:* ```.weather Bakü```",
             "LOCATION": "Location",
-            "HMOD": "Finds mod apps from happymod",
-            "QUOTE_DESC": "It shares famous quotes",
-            "CM_DESC": "It sends complimentry sentenses",
-            "EVINS_DESC": "It sends insulted words",
-            "JOKE_DESC": "It sends random jokes",
-            "APK_MOD": "It sends some special mod apks",
-            "CARBON_DESC": "It sends carbon picture",
             "TEMP": "Temperature",
-            "BOT_DESC": "Chat with Pinky.\n Use .molu <mesrge>",
-            "BOT": ":",
-            "DEVICE": "It shows the details of device",
             "DESC": "Description",
             "HUMI": "Humidity",
             "WIND": "Wind Speed",
@@ -319,9 +291,6 @@
             "T_FALSE": "```❌ Incorrect Blend Effect Entered!```\n```🔎 Existing Commands:```\n\n*$dodge* - Applies a pink color filter to the video.\n*$multiply* - Applies a green color filter to the video.\n*$grainmerge* - Increases the contrast of the video.\n*$and* - Applies black lightning effect according to the speed of the video.\n*$or* - Applies a white lightning effect according to the speed of the video.\n*$burn* - Applies green contrast to video.\n*$difference* - Shows the differences by applying green relief to the video.\n*$grainextract* - Shows the differences by applying gray relief to the video.\n*$divide* - Demonstrates the differences by applying a pink relief to the video.\n*$xor* - Applies both green relief and lightning effect to video.\n*$hardmix* - Mixes the colors of the video into a yellow and red tone.\n*$negation* - Turns the dynamics of the video to pink.",
             "T_NOT": "```💭 You Need To Enter Any Blend Effects!\n```🔎 Existing Commands:```\n\n*$dodge* - Applies a pink color filter to the video.\n*$multiply* - Applies a green color filter to the video.\n*$grainmerge* - Increases the contrast of the video.\n*$and* - Applies black lightning effect according to the speed of the video.\n*$or* - Applies a white lightning effect according to the speed of the video.\n*$burn* - Applies green contrast to video.\n*$difference* - Shows the differences by applying green relief to the video.\n*$grainextract* - Shows the differences by applying gray relief to the video.\n*$divide* - Demonstrates the differences by applying a pink relief to the video.\n*$xor* - Applies both green relief and lightning effect to video.\n*$hardmix* - Mixes the colors of the video into a yellow and red tone.\n*$negation* - Turns the dynamics of the video to pink.",
             "T_DESC": "Applies the selected TBlend effect to videos." 
-        },
-        "multiuse": {
-            "NEED_WORD": "*Please enter username of any instagram account.*"
         },
         "mute": {
             "BİRMUTE": "*The group was silenced for 1 minute!*",
@@ -470,26 +439,28 @@
             "SAVE_USAGE": "Reply a message and type .save or just use .save <Your note> without replying",
             "REPLY": "Please provide a note or reply to a message.",
             "SUCCESSFULLY_ADDED": "Successfully added new note, check your notes with .notes.",
-            "UNSUCCESSFUL": "Could not add note, please try again later or contact CyberBot developers.",
+            "UNSUCCESSFUL": "Could not add note, please try again later or contact Cyber Bot developers.",
             "DELETE_USAGE": "Deletes *all* your saved notes.",
             "SUCCESSFULLY_DELETED": "Successfully deleted all your notes."
         },
         "instagram": {
-            "NEED_WORD": "*Please enter username of any instagram account.*",
+            "NEED_WORD": "*Enter Any Instagram Post Link!*",
             "USAGE": ".insta <userName>",
-            "DESC": "Fetches user informations from instagram",
-            "LOADING": "*Searching*",
+            "DESC": "Downloads videos or photos from Instagram.",
+            "LOADING": "Fetching user data.. please wait.",
             "USERNAME": "Username",
-            "FULL_NAME": "Fullname",
-            "PRIVATE": "Private",
-            "VERIFIED": "Verified",
+            "NAME": "Name",
+            "BIO": "Biography",
+            "FİX": "*Carrying out maintenance work!*",
+            "FOLLOWERS": "Followers",
+            "FOLLOWS": "Follows",
             "ACCOUNT": "Account privacy",
             "PUBLIC": "Public",
             "HIDDEN": "Hidden",
-            "NOT_FOUND":"User not found: "
+            "NOT_FOUND": "*Media Not Found!*"
         },
         "github": {
-            "GİTHUB_DESC": "Collects github information from the given username.\n⌨️ Example: .github phaticusthiccy",
+            "GİTHUB_DESC": "Collects github information from the given username.\n⌨️ Example: .github Aqua-Snake",
             "REPLY": "```You Need To Type Any Username!```",
             "NOT": "```User not found!```",
             "FOLLOWERS": "Followers:",

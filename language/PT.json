@@ -75,9 +75,9 @@
             "MUST_TEXT": "```Por favor responda a qualquer mensagem```"
         },
         "heroku": {
-            "RESTART_DESC": "Reinicia o CyberBot",
+            "RESTART_DESC": "Reinicia o WhatsAsena",
             "RESTART_MSG": "```Reiniciando...```",
-            "SHUTDOWN_DESC": "Desligar CyberBot",
+            "SHUTDOWN_DESC": "Desligar WhatsAsena",
             "SHUTDOWN_MSG": "```Desligando ⛔```",
             "DYNO_DESC": "Verifique o uso do dinamômetro heroku",
             "DYNO_TOTAL": "```Quota Total```",
@@ -211,6 +211,7 @@
         },
         "tagall": {
             "TAGALL_DESC": "Marca todos no grupo.",
+            "HIDETAG_DESC": "Marca todos no grupo.(Member Mode)",
             "ADMİN": "*Eu não sou administrador neste grupo!*",
             "SCAN": "Verifica se o número inserido está registrado no WhatApp.",
             "NO": "*Digite qualquer número de telefone!*\n*Amostra:* ```.scan 991xxxx```",
@@ -250,7 +251,7 @@
             "INVALID_HEROKU": "*❌ Suas informações do Heroku estão erradas!*",
             "UPDATED": "*✅ Atualizado com sucesso!*",
             "UPDATED_LOCAL": "*✅ Atualizado com sucesso!*",
-            "AFTER_UPDATE": "*💬 CyberBot reiniciando automaticamente!*",
+            "AFTER_UPDATE": "*💬 WhatsAsena reiniciando automaticamente!*",
             "IN_AF": "*Certifique-se de que* ```HEROKU_APP_NAME``` *é igual a* ```app name```\n*Se esses dois valores forem iguais, altere* ```HEROKU_API_KEY```\n\n_Para acessar essas configurações Heroku >> App >> Settings >> Reavel Config Vars siga seus passos._\n_Para renovar sua chave de API Heroku >> Account >> API Key Depois de atualizar a seção, substitua-a pela chave de API antiga.._"
         },
         "weather": {
@@ -438,7 +439,7 @@
             "SAVE_USAGE": "Responda uma mensagem e digite .save ou apenas use .save <Sua nota> sem responder",
             "REPLY": "Forneça uma nota ou responda a uma mensagem.",
             "SUCCESSFULLY_ADDED": "Nova nota adicionada com sucesso, verifique suas notas com .notes.",
-            "UNSUCCESSFUL": "Não foi possível adicionar nota, tente novamente mais tarde ou entre em contato com os desenvolvedores do CyberBot.",
+            "UNSUCCESSFUL": "Não foi possível adicionar nota, tente novamente mais tarde ou entre em contato com os desenvolvedores do WhatsAsena.",
             "DELETE_USAGE": "Exclui *todas* as suas notas salvas.",
             "SUCCESSFULLY_DELETED": "Excluiu com sucesso todas as suas notas."
         },

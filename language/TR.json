@@ -75,9 +75,9 @@
             "MUST_TEXT": "```Lütfen herhangi bir mesajı yanıtlayın```"
         },
         "heroku": {
-            "RESTART_DESC": "CyberBot'yı yeniden başlatın",
+            "RESTART_DESC": "WhatsAsena'yı yeniden başlatın",
             "RESTART_MSG": "```Yeniden Başlatılıyor...```",
-            "SHUTDOWN_DESC": "CyberBot'yı kapatır.",
+            "SHUTDOWN_DESC": "WhatsAsena'yı kapatır.",
             "SHUTDOWN_MSG": "*Belki birgün tekrar görüşebiliriz..\nHoşcakal Sahip..*\n```Asena Kapatılıyor... ⛔```",
             "DYNO_DESC": "Heroku dyno kullanımını kontrol edin",
             "DYNO_TOTAL": "```Toplam Kota```",
@@ -210,6 +210,7 @@
         },
         "tagall": {
             "TAGALL_DESC": "Gruptaki herkesi etiketler. Hidetag atmak için mesajı yanıtlayın yada kelime girin.",
+            "HIDETAG_DESC": "Gruptaki herkesi etiketler. Hidetag atmak için mesajı yanıtlayın yada kelime girin.(Member Mode)",
             "ADMİN": "*Bu Grupta Admin Değilim!*",
             "SCAN": "Girilen numaranın WhatApp'ta kayıtlı olup olmadığını kontrol eder.",
             "NO": "*Lütfen Herhangi Bir Telefon Numarası Gir!*\n*Örnek:* ```.scan 90xxxx```",
@@ -249,7 +250,7 @@
             "INVALID_HEROKU": "*❌ Heroku bilgileriniz yanlış!*",
             "UPDATED": "*✅ Güncelleme başarılı oldu!*",          
             "UPDATED_LOCAL": "*✅ Güncelleme başarılı oldu!*",
-            "AFTER_UPDATE": "*💬 CyberBot Yeniden Başlatılıyor*",
+            "AFTER_UPDATE": "*💬 WhatsAsena Yeniden Başlatılıyor*",
             "IN_AF": "*Lütfen* ```HEROKU_APP_NAME``` *ile* ```app name```'nizin *aynı olduğuna emin olun.*\n*Bu iki değer aynı ise lütfen* ```HEROKU_API_KEY```'inizi *değiştirin!*\n\n_Bu ayarlara ulaşmak için Heroku >> Uygulama >> Settings >> Reavel Config Vars adımlarını takip edin._\n_API keyinizi yenilemek için Heroku >> Account >> API Key kısmından yeniledikten sonra eski API key ile değiştirin._"
         },
         "weather": {
@@ -443,7 +444,7 @@
             "SAVE_USAGE": "Yanıtladığınız mesajı yada resmi nota kaydeder.",
             "REPLY": "Lütfen bir mesaj alıntılayın veya .save <notunuz> şeklinde kullanın.",
             "SUCCESSFULLY_ADDED": "Notunuz başarılı bir şekilde kaydedildi, .notes yazarak notlarınıza ulaşabilirsiniz",
-            "UNSUCCESSFUL": "Notunuzu kaydederken bir hatayla karşılaştık, lütfen tekrar deneyin. Eğer sorun devam ediyorsa lütfen CyberBot geliştiricileriyle iletişime geçin.",
+            "UNSUCCESSFUL": "Notunuzu kaydederken bir hatayla karşılaştık, lütfen tekrar deneyin. Eğer sorun devam ediyorsa lütfen WhatsAsena geliştiricileriyle iletişime geçin.",
             "DELETE_USAGE": "Kaydettiğiniz *tüm* notlarınızı siler.",
             "SUCCESSFULLY_DELETED": "Tüm notlarınız başarılı bir şekilde silindi."
         },
