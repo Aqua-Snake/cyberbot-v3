@@ -4,9 +4,8 @@ const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
 const hrs = new Date().getHours({ timeZone: 'Asia/Kolkata' })
 
-let whb = Config.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({pattern: 'calive', fromMe: whb, desc: 'Customized menu message'}, (async (message, match) => {
+Asena.addCommand({pattern: 'calive', fromMe: false, desc: 'Customized menu message'}, (async (message, match) => {
 
     var r_text = new Array ();
     
@@ -146,7 +145,7 @@ if (config.ANTİLİNK == 'false') antilink = 'Off'
 
 *To check update .update   To update Bot .update now*
 
-*Website* : https://aqua-snake.github.io/cyberbot/
+*Website* : https://aqua-snake.github.io/cyberbot
 `}) 
 
 }));
