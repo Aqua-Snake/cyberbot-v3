@@ -100,7 +100,7 @@ async function whatsAsena () {
     })    
 
     conn.on('connecting', async () => {
-        console.log(`${chalk.green.bold('Whats')}${chalk.blue.bold('Asena')}
+        console.log(`${chalk.green.bold('Cyber')}${chalk.blue.bold('Bot')}
 ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
 
 ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
