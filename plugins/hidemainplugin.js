@@ -37,8 +37,8 @@ let whb = Config.WORKTYPE == 'public' ? false : true
 Asena.addCommand({pattern: 'alive', fromMe: whb, dontAddCommandList: true}, (async (message, match) => {
 // send a buttons message
     const buttons = [
-        {buttonId: '.menu', buttonText: {displayText: 'COMMAND LIST' }, type: 1},
-        {buttonId: '.help', buttonText: {displayText: 'Help' }, type: 1}
+        {buttonId: '.menu', buttonText: {displayText: '.menu' }, type: 1},
+        {buttonId: '.help', buttonText: {displayText: '.help' }, type: 1}
       ]
       
       const buttonMessage = {

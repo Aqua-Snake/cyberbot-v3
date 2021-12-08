@@ -10,7 +10,9 @@ const usage = ".dcrpt <text>"
 
 const encypt = "```Enter the encrypted text which you need to decrypt!```"
 
-Asena.addCommand({ pattern: 'dcrpt ?(.*)', fromMe: false, desc: b64, usage: usage }, async (message, match) => {
+let whb = Config.WORKTYPE == 'public' ? false : true
+
+Asena.addCommand({ pattern: 'dcrpt ?(.*)', fromMe: whb, desc: b64, usage: usage }, async (message, match) => {
 
         const Wtb = match[1]
         

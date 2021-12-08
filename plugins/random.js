@@ -4,8 +4,9 @@ const fs = require('fs');
 const axios = require('axios');
 const NEED_WORD = "*Must Enter some Words*"
 
+let whb = Config.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({ pattern: 'random ?(.*)', fromMe: false, desc: 'word image' }, (async (message, match) => {
+Asena.addCommand({ pattern: 'random ?(.*)', fromMe: whb, desc: 'word image' }, (async (message, match) => {
 
     var r_text = new Array ();
 
@@ -28,6 +29,6 @@ Asena.addCommand({ pattern: 'random ?(.*)', fromMe: false, desc: 'word image' },
 
     var ttinullimage = await axios.get(`${r_text[i]}`, { responseType: 'arraybuffer' })
 
-    await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: '```PublicBot```' })
+    await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: '```CyberBot```' })
 
 }));

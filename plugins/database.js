@@ -12,15 +12,15 @@ var ddd = ggg.toString('utf-8')
 let whb = Config.WORKTYPE == 'public' ? false : true
 
 Asena.addCommand({pattern: 'bot', fromMe: whb, dontAddCommandList: true}, (async (message, match) => {
-// send a buttons message! Amalser.
+// send a buttons message!
     var plk_say = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
 const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 var plk_here = new Date().toLocaleDateString(get_localized_date)
 var afnplk = '```⏱ Time :' + plk_say + '```\n\n ```📅 Date :' + plk_here + '```'
 	const buttons = [
 
-        {buttonId: 'id1', buttonText: {displayText: 'OWN\n\n*CyberBot V3 \n\n*welcome message addedd simple way*\n\n*.welcome {pp} {gphead} {gpmaker} {gpdesc}{owner}*\n\n*Another way*\n*.welcome {gif} {gphead} {gpmaker} {gpdesc} {time} {owner}*\n\n*Broadcast adedd replay with any message .bc*\n\n*Alive message time set*\n\n*Button message added .bot and .help*\n\n*All type of downloading command example .yt, .video, .song, .get*\n\n '}, type: 1},
-        {buttonId: 'id2', buttonText: {displayText: 'GIT\n\n```Github link: https://github.com/Aqua-Snake```\n\n```YT_PASSWORD:  password in youtube channel video watch it full and subcribe for more updations```\n'  }, type: 1},
+        {buttonId: 'id1', buttonText: {displayText: 'OWNER'}, type: 1},
+        {buttonId: 'id2', buttonText: {displayText: 'WEBSITE'  }, type: 1},
 
       ]
       
@@ -34,3 +34,17 @@ var afnplk = '```⏱ Time :' + plk_say + '```\n\n ```📅 Date :' + plk_here + '
       await message.client.sendMessage(message.jid, buttonMessage, MessageType.buttonsMessage)
 
 }));
+
+
+Asena.addCommand({pattern: 'id1 ?(.*)', fromMe:  whb, dontAddCommandList: true}, (async (message, match) => {
+
+  await message.client.sendMessage(message.jid, 'Not Updated', MessageType.text);
+  }));
+
+Asena.addCommand({pattern: 'id2 ?(.*)', fromMe: whb, dontAddCommandList: true}, (async (message, match) => {
+
+  await message.client.sendMessage(message.jid, '```Website : https://aqua-snake.github.io/cyberbot```\n\n```Check our offical website for more updations```\n', MessageType.text);
+  }));
+
+
+

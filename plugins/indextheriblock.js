@@ -10,14 +10,14 @@ const Config = require('../config')
 const INBO1 = "_~~~••• CyberBot_V3 •••~~~_* \n\n\n *i am blocking you.* \n\n *REASON:THERI ITTATH KOND🖐🏻🖐🏻"
  if (Config.INBO1 == 'true') {
 Asena.addCommand({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (async (message, match) => {
-        let regexb1ichu = new RegExp('thayoli')
-        let regexb2ichu = new RegExp('myre')
-        let regexb3ichu = new RegExp('kunna')
-        let regexb4ichu = new RegExp('poorimone')
-        let regexb5ichu = new RegExp('myr')
-        let regexb6ichu = new RegExp('patti')
-        let regexb7ichu = new RegExp('oombi')
-        let regexb8ichu = new RegExp('thendi')
+        let regexb1ichu = new RegExp('huththa')
+        let regexb2ichu = new RegExp('pakaya')
+        let regexb3ichu = new RegExp('hukanna')
+        let regexb4ichu = new RegExp('ponnaya')
+        let regexb5ichu = new RegExp('kariya')
+        let regexb6ichu = new RegExp('huttige putha')
+        let regexb7ichu = new RegExp('paraya')
+        let regexb8ichu = new RegExp('kamriya')
 // export data 
           if (regexb1ichu.test(message.message)) {
            

@@ -9,7 +9,9 @@ const Language = require('../language');
 const Lang = Language.getString('weather');
 const { errorMessage, infoMessage } = require('../helpers');
 
-Asena.addCommand({ pattern: 'joox ?(.*)', fromMe: false, dontAddCommandList: true}, async (message, match) => {
+let whb = Config.WORKTYPE == 'public' ? false : true
+
+Asena.addCommand({ pattern: 'joox ?(.*)', fromMe: whb, dontAddCommandList: true}, async (message, match) => {
 
     const userName = match[1]
 
@@ -44,7 +46,7 @@ Asena.addCommand({ pattern: 'joox ?(.*)', fromMe: false, dontAddCommandList: tru
 
 
 
- Asena.addCommand({ pattern: 'rest ?(.*)', fromMe: true,  dontAddCommandList: true, desc: Lang.DESC }, (async (message, match) => {
+ Asena.addCommand({ pattern: 'rest ?(.*)', fromMe: whb,  dontAddCommandList: true, desc: Lang.DESC }, (async (message, match) => {
         if (match[0].includes('install')) return;
         if (match[1] === '') return await message.client.sendMessage(message.jid, Lang.NEED_WORD, MessageType.text, { quoted: message.data });
         if (!match[1].includes('www.instagram.com')) return await message.client.sendMessage(message.jid, Lang.NEED_WORD, MessageType.text, { quoted: message.data });
@@ -71,7 +73,7 @@ Asena.addCommand({ pattern: 'joox ?(.*)', fromMe: false, dontAddCommandList: tru
 
 
 
-Asena.addCommand({ pattern: 'twt ?(.*)', fromMe: false,  dontAddCommandList: true, desc: "download from twitter links" }, async (message, match) => {
+Asena.addCommand({ pattern: 'twt ?(.*)', fromMe: whb,  dontAddCommandList: true, desc: "download from twitter links" }, async (message, match) => {
 
     const userName = match[1]
 
@@ -110,7 +112,7 @@ Asena.addCommand({ pattern: 'twt ?(.*)', fromMe: false,  dontAddCommandList: tru
 
 
 
-Asena.addCommand({ pattern: 'show ?(.*)', fromMe: false , desc: "Get info related to tv series and shows"}, async (message, match) => {
+Asena.addCommand({ pattern: 'show ?(.*)', fromMe: whb, desc: "Get info related to tv series and shows"}, async (message, match) => {
 
     const userName = match[1]
 
@@ -141,7 +143,7 @@ Asena.addCommand({ pattern: 'show ?(.*)', fromMe: false , desc: "Get info relate
   },
 )
 
-Asena.addCommand({ pattern: 'show ?(.*)', fromMe: false , dontAddCommandList: true}, async (message, match) => {
+Asena.addCommand({ pattern: 'show ?(.*)', fromMe: whb, dontAddCommandList: true}, async (message, match) => {
 
  const userName = match[1]
     

@@ -1,10 +1,12 @@
-const Amalser= require('../events');
+const Asena= require('../events');
 const config = require('../config');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
 const hrs = new Date().getHours({ timeZone: 'Asia/Kolkata' })
 
-Amalser.addCommand({pattern: 'git', fromMe: false, desc: 'it send bot menu'}, (async (message, match) => {
+let whb = Config.WORKTYPE == 'public' ? false : true
+
+Asena.addCommand({pattern: 'calive', fromMe: whb, desc: 'Customized menu message'}, (async (message, match) => {
 
     var r_text = new Array ();
     
@@ -143,8 +145,6 @@ if (config.ANTİLİNK == 'false') antilink = 'Off'
  ──────────────────╯
 
 *To check update .update   To update Bot .update now*
-
-*githublink* : https://github.com/Aqua-Snake
 
 *Website* : https://aqua-snake.github.io/cyberbot/
 `}) 

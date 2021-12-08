@@ -1,4 +1,4 @@
-const Ktb = require('../events');
+const Asena = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const axios = require('axios');
 const Config = require('../config');
@@ -10,7 +10,9 @@ const usage = ".b64en <text>"
 
 const encypt = "```Enter the text which you need to encrypt!```"
 
-Ktb.addCommand({ pattern: 'encrpt ?(.*)', fromMe: false, desc: b64, usage: usage }, async (message, match) => {
+let whb = Config.WORKTYPE == 'public' ? false : true
+
+Asena.addCommand({ pattern: 'encrpt ?(.*)', fromMe: false, desc: b64, usage: usage }, async (message, match) => {
 
         const Wtb = match[1]
         
