@@ -2,7 +2,8 @@
 
 const Asena = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
-const axios = require ('axios')
+const axios = require ('axios');
+const Config = require('../config');
 
 let whb = Config.WORKTYPE == 'public' ? false : true
 
@@ -26,4 +27,3 @@ Asena.addCommand({pattern: 'insta ?(.*)', fromMe: whb, desc: "Downloads from ins
     
 });
     
-// thanks to :- farhan-dqz
