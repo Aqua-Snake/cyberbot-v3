@@ -26,11 +26,11 @@ Asena.addCommand({pattern: 'cmd', fromMe: whb, dontAddCommandList: true}, (async
         {title: 'GROUPS', description: Config.GRPLINK }
        ]
        
-       const sections = [{title: "CyberBot ❤️", rows: rows}]
+       const sections = [{title: "*CyberBot*", rows: rows}]
        
        const button = {
         buttonText: '𝗖𝗟𝗜𝗖𝗞 𝗛𝗘𝗥𝗘',
-        description: '*THIS IS* ' + Config.NBOT + ' *CMD MENU*\n\n  *💮✬✬All Commands Menu✬✬💮*\n\n Touch The ✅ SELECTE Button Below And Select As Needed',
+        description: '*THIS IS* ' + Config.NBOT + ' *CMD MENU*\n\n  *✬✬All Commands Menu✬✬ *\n\n Touch The ✅ SELECTE Button Below And Select As Needed',
         sections: sections,
         listType: 1
        }
