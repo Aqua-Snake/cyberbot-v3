@@ -3,7 +3,7 @@ const {MessageType} = require('@adiwajshing/baileys');
 const exec = require('child_process').exec;
 const os = require("os");
 const fs = require('fs');
-const Config = require('../config')
+const Config = require('../config'):
 
 Asena.addCommand({ pattern: 'owner?(.*)', fromMe: false, desc: 'owner number' }, (async (message, match) => {
 

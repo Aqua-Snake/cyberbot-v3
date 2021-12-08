@@ -2,6 +2,7 @@ const Asena = require('../events');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const axios = require('axios');
+const Config = require('../config');
 const NEED_WORD = "*Must Enter some Words*"
 
 let whb = Config.WORKTYPE == 'public' ? false : true
