@@ -1,5 +1,5 @@
 const Asena = require('../events');
-const {MessageType} = require('@aqua-snake/cyber-bot-web');
+const {MessageType} = require('@adiwajshing/baileys');
 const Config = require('../config');
 const fs = require('fs');
 
