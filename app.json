@@ -37,9 +37,9 @@
             "value": "false"
         },
          "LG_LOGO": {
-            "description": "LOGO list message image link(https://telegra.ph/)link.",
+            "description": "LOGO list message image link(https://img.bb/)link.",
             "required": true,
-            "value": "https://telegra.ph/file/c0f8c2c5be86619be6efe.jpg"
+            "value": "https://i.ibb.co/h26VWqL/CyberBot.jpg"
         },
         "WELCOME": {
             "description": "You can select welcome as gif/pp",
