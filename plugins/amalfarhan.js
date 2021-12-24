@@ -6,7 +6,7 @@ const hrs = new Date().getHours({ timeZone: 'Asia/Kolkata' })
 
 let whb = Config.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({pattern: 'calive', fromMe: false, desc: 'Customized menu message'}, (async (message, match) => {
+CBot.addCommand({pattern: 'calive', fromMe: whb, desc: 'Customized menu message'}, (async (message, match) => {
 
     var r_text = new Array ();
     
@@ -114,15 +114,15 @@ if (hrs >= 12 && hrs <= 17) wish = '*ɢᴏᴏᴅ ᴀғᴛᴇʀɴᴏᴏɴ 🌞*'
 if (hrs >= 17 && hrs <= 19) wish = '*ɢᴏᴏᴅ ᴇᴠᴇɴɪɴɢ 🌥*'
 if (hrs >= 19 && hrs <= 24) wish = '*ɢᴏᴏᴅ ɴɪɢʜᴛ 🌙*'
 
-if (config.TALKING_PINKY == 'true') pinky = 'On'
-if (config.TALKING_PINKY == 'false') pinky = 'Off'
-if (config.AUTOBİO == 'true') autobio = 'On'
-if (config.AUTOBİO == 'false') autobio = 'Off'
-if (config.ANTİLİNK == 'true') antilink = 'On'
-if (config.ANTİLİNK == 'false') antilink = 'Off'
+if (Config.TALKING_PINKY == 'true') pinky = 'On'
+if (Config.TALKING_PINKY == 'false') pinky = 'Off'
+if (Config.AUTOBİO == 'true') autobio = 'On'
+if (Config.AUTOBİO == 'false') autobio = 'Off'
+if (Config.ANTİLİNK == 'true') antilink = 'On'
+if (Config.ANTİLİNK == 'false') antilink = 'Off'
 
     await message.sendMessage(Buffer(respoimage.data), MessageType.image, {mimetype: Mimetype.jpg, detectLinks: true, contextInfo: {mentionedJid: message.mention}, caption: `╭──────────────────╮
-   ` + config.BOT + `
+   ` + Config.BOT + `
 ╭──────────────────╯
 │
 │ ʜᴇʏ ᴜsᴇʀ ` + wish + `

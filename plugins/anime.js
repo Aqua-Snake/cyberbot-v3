@@ -1,12 +1,12 @@
 
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
 const Config = require('../config');
 
 if (Config.WORKTYPE == 'private') {
 
-    Asena.addCommand({pattern: 'anime', fromMe: true, desc: 'random anime image'}, (async (message, match) => {
+    CBot.addCommand({pattern: 'anime', fromMe: true, desc: 'random anime image'}, (async (message, match) => {
 
     var r_text = new Array ();
 
@@ -94,13 +94,13 @@ if (Config.WORKTYPE == 'private') {
 
     var respoimage = await axios.get(`${r_text[i]}`, { responseType: 'arraybuffer' })
 
-    await message.sendMessage(Buffer(respoimage.data), MessageType.image, {mimetype: Mimetype.png, caption: '94764746599'})
+    await message.sendMessage(Buffer(respoimage.data), MessageType.image, {mimetype: Mimetype.png, caption: 'Made by CyberBot'})
 
     }));
 }
 else if (Config.WORKTYPE == 'public') {
 
-    Asena.addCommand({pattern: 'anime', fromMe: false, desc:'random anime image '}, (async (message, match) => {
+    CBot.addCommand({pattern: 'anime', fromMe: false, desc:'random anime image '}, (async (message, match) => {
 
     var r_text = new Array ();
 

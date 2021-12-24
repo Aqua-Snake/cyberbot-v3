@@ -1,5 +1,5 @@
 
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType,Mimetype} = require('@adiwajshing/baileys');
 const translatte = require('translatte');
 const fs = require('fs');
@@ -15,7 +15,7 @@ const axios = require('axios')
 
 let TB = Config.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({ pattern: 'splay ?(.*)', fromMe: TB,  deleteCommand: false, desc: Lang.SONG_DESC}, (async (message, match) => {
+CBot.addCommand({ pattern: 'splay ?(.*)', fromMe: TB,  deleteCommand: false, desc: Lang.SONG_DESC}, (async (message, match) => {
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_VIDEO,MessageType.text, {quoted: message.data});    
     if (match[1].includes('shorts')) return await message.client.sendMessage(message.jid,Lang.SHORTS,MessageType.text, {quoted: message.data});

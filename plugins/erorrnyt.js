@@ -1,6 +1,6 @@
 
 
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType, Mimetype} = require('@adiwajshing/baileys');
 const memeMaker = require('meme-maker')
 const fs = require('fs')
@@ -11,7 +11,7 @@ const Lang = Language.getString('memes');
 
 if (Config.WORKTYPE == 'private') {
 
-    Asena.addCommand({pattern: 'meme ?(.*)', fromMe: true, desc: Lang.MEMES_DESC}, (async (message, match) => {   
+    CBot.addCommand({pattern: 'meme ?(.*)', fromMe: true, desc: Lang.MEMES_DESC}, (async (message, match) => {   
 
         if (message.reply_message === false) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text);
         var topText, bottomText;
@@ -49,7 +49,7 @@ if (Config.WORKTYPE == 'private') {
 }
 else if (Config.WORKTYPE == 'public') {
 
-    Asena.addCommand({pattern: 'meme ?(.*)', fromMe: false, desc: Lang.MEMES_DESC}, (async (message, match) => {    
+    CBot.addCommand({pattern: 'meme ?(.*)', fromMe: false, desc: Lang.MEMES_DESC}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text);
 	 if (match[1].includes('{1}')) {    
@@ -94,7 +94,7 @@ else if (Config.WORKTYPE == 'public') {
             var split = match[1].split(';');
             topText = split[1].replace('{2}','');
             bottomText = split[0].replace('{2}','');
-        } //created by afnanplk
+        } //CyberBot pligin
 	    else {
             topText = match[1].replace('{2}','');
             bottomText = '';
@@ -130,7 +130,7 @@ else if (Config.WORKTYPE == 'public') {
             var split = match[1].split(';');
             topText = split[1].replace('{3}','');
             bottomText = split[0].replace('{3}','');
-        } //created by afnanplk
+        } //CyberBot pligin
 	    else {
             topText = match[1].replace('{3}','');
             bottomText = '';
@@ -166,7 +166,7 @@ else if (Config.WORKTYPE == 'public') {
             var split = match[1].split(';');
             topText = split[1].replace('{4}','');
             bottomText = split[0].replace('{4}','');
-        } //created by afnanplk
+        } //CyberBot pligin
 	    else {
             topText = match[1].replace('{4}','');
             bottomText = '';
@@ -195,7 +195,7 @@ else if (Config.WORKTYPE == 'public') {
             await info.delete();    
         });
        }
-	     //created by afnanplk
+	     //CyberBot pligin
 	     if (match[1].includes('{5}')) {    
         var topText, bottomText;
         if (match[1].includes(';')) {
@@ -217,7 +217,7 @@ else if (Config.WORKTYPE == 'public') {
             },
             message: message.reply_message.data.quotedMessage
         }); 
-     //created by afnanplk
+     
 	    memeMaker({
             image: location,         
             outfile: 'plk-cyberbot.png',
@@ -243,7 +243,7 @@ else if (Config.WORKTYPE == 'public') {
             topText = match[1].replace('{6}','');
             bottomText = '';
         }
-     //created by afnanplk
+     
 	    var info = await message.reply(Lang.DOWNLOADING);
 	
         var location = await message.client.downloadAndSaveMediaMessage({
@@ -289,7 +289,7 @@ else if (Config.WORKTYPE == 'public') {
             },
             message: message.reply_message.data.quotedMessage
         }); 
-     //created by afnanplk
+     //CyberBot pligin
 	    memeMaker({
             image: location,         
             outfile: 'plk-cyberbot.png',
@@ -338,7 +338,7 @@ else if (Config.WORKTYPE == 'public') {
             await message.client.sendMessage(message.jid, fs.readFileSync('plk-cyberbot.png'), MessageType.image, {filename: 'cyberbot_meme.png', mimetype: Mimetype.png, caption: Config.AFN});
             await info.delete();    
         });
-       } //created by afnanplk
+       } //CyberBot pligin
 	    
 	     if (match[1].includes('{8}')) {    
         var topText, bottomText;
@@ -361,7 +361,7 @@ else if (Config.WORKTYPE == 'public') {
             },
             message: message.reply_message.data.quotedMessage
         }); 
-    //created by afnanplk
+    //CyberBot pligin
 	    memeMaker({
             image: location,         
             outfile: 'plk-cyberbot.png',
@@ -411,7 +411,7 @@ else if (Config.WORKTYPE == 'public') {
             await info.delete();    
         });
        }
-	     //created by afnanplk
+	     //CyberBot pligin
 	    else {
 		     var topText, bottomText;
         if (match[1].includes(';')) {

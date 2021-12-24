@@ -1,4 +1,4 @@
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType, GroupSettingChange, Mimetype, MessageOptions} = require('@adiwajshing/baileys');
 const fs = require('fs');
 const Config = require('../config')
@@ -11,7 +11,7 @@ var ddd = ggg.toString('utf-8')
 
 let whb = Config.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({pattern: 'bot', fromMe: whb, dontAddCommandList: true}, (async (message, match) => {
+CBot.addCommand({pattern: 'bot', fromMe: whb, dontAddCommandList: true}, (async (message, match) => {
 // send a buttons message!
     var plk_say = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
 const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -36,12 +36,12 @@ var afnplk = '```⏱ Time :' + plk_say + '```\n\n ```📅 Date :' + plk_here + '
 }));
 
 
-Asena.addCommand({pattern: 'id1 ?(.*)', fromMe:  whb, dontAddCommandList: true}, (async (message, match) => {
+CBot.addCommand({pattern: 'id1 ?(.*)', fromMe:  whb, dontAddCommandList: true}, (async (message, match) => {
 
   await message.client.sendMessage(message.jid, 'Not Updated', MessageType.text);
   }));
 
-Asena.addCommand({pattern: 'id2 ?(.*)', fromMe: whb, dontAddCommandList: true}, (async (message, match) => {
+CBot.addCommand({pattern: 'id2 ?(.*)', fromMe: whb, dontAddCommandList: true}, (async (message, match) => {
 
   await message.client.sendMessage(message.jid, '```Website : https://aqua-snake.github.io/cyberbot```\n\n```Check our offical website for more updations```\n', MessageType.text);
   }));

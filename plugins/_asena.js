@@ -1,6 +1,6 @@
  
 
-const Asena = require('../events');
+const CBot = require('../events');
 const Config = require('../config');
 const {MessageType} = require('@adiwajshing/baileys');
 const fs = require("fs")
@@ -10,11 +10,11 @@ const Lang = Language.getString('_asena');
 
 if (Config.WORKTYPE == 'private') {
 
-    Asena.addCommand({pattern: 'menu ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'menu ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
         
         var CMD_HELP = '';
         if (match[1] === '') {
-            Asena.commands.map(
+            CBot.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -63,7 +63,7 @@ if (Config.WORKTYPE == 'private') {
         else {
             var CMD_HELP = '';
             
-            Asena.commands.map(
+            CBot.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -117,11 +117,11 @@ if (Config.WORKTYPE == 'private') {
         }
     }));
     
-    Asena.addCommand({pattern: 'COMMAND LIST ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'menu ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
         var CMD_HELP = '';
         if (match[1] === '') {
-            Asena.commands.map(
+            CBot.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -169,7 +169,7 @@ if (Config.WORKTYPE == 'private') {
         } 
         else {
             var CMD_HELP = '';
-            Asena.commands.map(
+            CBot.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -242,14 +242,14 @@ async function checkImAdmin(message, user = message.client.user.jid) {
     return sonuc.includes(true);
 }
 
-     Asena.addCommand({pattern: 'menu ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+     CBot.addCommand({pattern: 'menu ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
          var us = await checkUsAdmin(message);
          if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN ,MessageType.text ,{quoted: message.data });
 
 
         var CMD_HELP = '';
         if (match[1] === '') {
-            Asena.commands.map(
+            CBot.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -297,7 +297,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
         } 
         else {
             var CMD_HELP = '';
-            Asena.commands.map(
+            CBot.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -354,11 +354,11 @@ async function checkImAdmin(message, user = message.client.user.jid) {
 
 else if (Config.WORKTYPE == 'public') {
 
-    Asena.addCommand({pattern: 'COMMAND LIST ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'menu ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
         var CMD_HELP = '';
         if (match[1] === '') {
-            Asena.commands.map(
+            CBot.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -406,7 +406,7 @@ else if (Config.WORKTYPE == 'public') {
         } 
         else {
             var CMD_HELP = '';
-            Asena.commands.map(
+            CBot.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -460,11 +460,11 @@ else if (Config.WORKTYPE == 'public') {
         }
     })); 
 
-    Asena.addCommand({pattern: 'menu ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'menu ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
         
         var CMD_HELP = '';
         if (match[1] === '') {
-            Asena.commands.map(
+            CBot.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
@@ -513,7 +513,7 @@ else if (Config.WORKTYPE == 'public') {
         } else {
             var CMD_HELP = '';
             
-            Asena.commands.map(
+            CBot.commands.map(
                 async (command) =>  {
                     if (command.dontAddCommandList || command.pattern === undefined) return;
                     try {
