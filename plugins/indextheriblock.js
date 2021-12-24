@@ -1,5 +1,5 @@
 
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const exec = require('child_process').exec;
 const os = require("os");
@@ -9,7 +9,7 @@ const Config = require('../config')
 // Inbox Block System
 const INBO1 = "_~~~••• CyberBot_V3 •••~~~_* \n\n\n *i am blocking you.* \n\n *REASON:THERI ITTATH KOND🖐🏻🖐🏻"
  if (Config.INBO1 == 'true') {
-Asena.addCommand({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (async (message, match) => {
+CBot.addCommand({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (async (message, match) => {
         let regexb1ichu = new RegExp('huththa')
         let regexb2ichu = new RegExp('pakaya')
         let regexb3ichu = new RegExp('hukanna')

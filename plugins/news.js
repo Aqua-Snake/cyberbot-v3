@@ -1,5 +1,5 @@
 
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const got = require('got');
 const Config = require('../config');
@@ -9,7 +9,7 @@ const Lang = Language.getString('weather');
 
 let whb = Config.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({pattern: 'news ?(.*)', fromMe: whb, desc: Lang.NEWS_DESC}, async (message, match) => {
+CBot.addCommand({pattern: 'news ?(.*)', fromMe: whb, desc: Lang.NEWS_DESC}, async (message, match) => {
 	if (match[1] === '') return await message.reply(Lang.NEED_CATEGORY);
 	const url = `https://inshortsapi.vercel.app/news?category=${match[1]}`;
 	try {

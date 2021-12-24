@@ -1,5 +1,5 @@
 
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType,Mimetype} = require('@adiwajshing/baileys');
 const translatte = require('translatte');
 const Config = require('../config');
@@ -31,7 +31,7 @@ const LOAD_ING = "```Downloading media...```"
 
 let whb = Config.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({pattern: 'get ?(.*)', fromMe: whb, desc: Lang.GET_DESC}, (async (message, match) => { 
+CBot.addCommand({pattern: 'get ?(.*)', fromMe: whb, desc: Lang.GET_DESC}, (async (message, match) => { 
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_SOME,MessageType.text);    
         if (!match[1].includes('mp3') && match[1].includes('youtu.be') || match[1].includes('youtube.com')) {

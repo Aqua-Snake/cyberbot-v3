@@ -4,7 +4,7 @@
 // */
 
 // const {MessageType, Mimetype, MessageOptions} = require('@adiwajshing/baileys');
-// const Asena = require('../events');
+// const CBot = require('../events');
 // const Config = require('../config');
 // const WhatsAsenaStack = require('whatsasena-npm');
 // const axios = require('axios')
@@ -22,7 +22,7 @@
 // if (Config.LANG == 'ML') CLR_DESC = 'Facebook വീഡിയോകൾ ഡൗൺലോഡ് ചെയ്യുന്നു.', wr = '*സാധുവായ ഒരു വീഡിയോ ലിങ്ക് നൽകുക!*'
 // if (Config.LANG == 'ID') CLR_DESC = 'Mengunduh video dari Facebook.', wr = '*Silakan Masukkan Tautan Video yang Valid!*'
 
-// Asena.addCommand({pattern: 'fb ?(.*)', fromMe: wk, desc: CLR_DESC, usage: 'fb https://www.facebook.com/Google/videos/10156367314197838'}, (async (message, match) => {
+// CBot.addCommand({pattern: 'fb ?(.*)', fromMe: wk, desc: CLR_DESC, usage: 'fb https://www.facebook.com/Google/videos/10156367314197838'}, (async (message, match) => {
 //   var reg = new RegExp(/^http(?:s?):\/\/(?:www\.|web\.|m\.)?facebook\.com\/([A-z0-9\.]+)\/videos(?:\/[0-9A-z].+)?\/(\d+)(?:.+)?$/, 'gm')
 //   var is_valid = reg.test(match[1])
 //   if (!is_valid) return await message.client.sendMessage(message.jid, wr, MessageType.text)

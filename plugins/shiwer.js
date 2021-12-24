@@ -1,4 +1,4 @@
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const axios = require('axios');
 const Config = require('../config');
@@ -12,7 +12,7 @@ const encypt = "```Enter the text which you need to encrypt!```"
 
 let whb = Config.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({ pattern: 'encrpt ?(.*)', fromMe: false, desc: b64, usage: usage }, async (message, match) => {
+CBot.addCommand({ pattern: 'encrpt ?(.*)', fromMe: false, desc: b64, usage: usage }, async (message, match) => {
 
         const Wtb = match[1]
         

@@ -1,5 +1,5 @@
 
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType,Mimetype} = require('@adiwajshing/baileys');
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
@@ -13,7 +13,7 @@ const Lang = Language.getString('unvoice'); // Language support
 
 if (Config.WORKTYPE == 'private') {
 
-  Asena.addCommand({pattern: 'a ?(.*)', fromMe: true, desc: Lang.UV_DESC}, (async (message, match) => {    
+  CBot.addCommand({pattern: 'a ?(.*)', fromMe: true, desc: Lang.UV_DESC}, (async (message, match) => {    
     if (message.reply_message === false);
     var location = await message.client.downloadAndSaveMediaMessage({
         key: {
@@ -30,7 +30,7 @@ let id = match[1];
             await message.client.sendMessage(id, fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: true});
 });}));
 
-Asena.addCommand({pattern: 'unvoice', fromMe: true, desc: Lang.UV_DESC}, (async (message, match) => {    
+CBot.addCommand({pattern: 'unvoice', fromMe: true, desc: Lang.UV_DESC}, (async (message, match) => {    
     if (message.reply_message === false);
     var location = await message.client.downloadAndSaveMediaMessage({
         key: {
@@ -47,7 +47,7 @@ Asena.addCommand({pattern: 'unvoice', fromMe: true, desc: Lang.UV_DESC}, (async 
             await message.sendMessage(fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: true});
 });}));
 
-Asena.addCommand({pattern: '2 ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
+CBot.addCommand({pattern: '2 ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
     if (message.reply_message === false);
     var location = await message.client.downloadAndSaveMediaMessage({
         key: {
@@ -64,7 +64,7 @@ let id = match[1];
             await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg});
 });}));
 
-Asena.addCommand({pattern: '1', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
+CBot.addCommand({pattern: '1', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
     if (message.reply_message === false);
     var location = await message.client.downloadAndSaveMediaMessage({
         key: {
@@ -81,7 +81,7 @@ Asena.addCommand({pattern: '1', fromMe: true, dontAddCommandList: true}, (async 
             await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg});
 });}));
 
-Asena.addCommand({pattern: 'unimage', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
+CBot.addCommand({pattern: 'unimage', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
     if (message.reply_message === false) return await message.sendMessage("Tag an image");
     var downloading = await message.client.sendMessage(message.jid,"```Downloading & Uploading...```",MessageType.text);
     var location = await message.client.downloadAndSaveMediaMessage({
@@ -103,7 +103,7 @@ Asena.addCommand({pattern: 'unimage', fromMe: true, dontAddCommandList: true}, (
 }
 else if (Config.WORKTYPE == 'public') {
 
-   Asena.addCommand({pattern: 'a ?(.*)', fromMe: true, desc: Lang.UV_DESC}, (async (message, match) => {    
+   CBot.addCommand({pattern: 'a ?(.*)', fromMe: true, desc: Lang.UV_DESC}, (async (message, match) => {    
     if (message.reply_message === false);
     var location = await message.client.downloadAndSaveMediaMessage({
         key: {
@@ -120,7 +120,7 @@ let id = match[1];
             await message.client.sendMessage(id, fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: true});
 });}));
 
-Asena.addCommand({pattern: 'unvoice', fromMe: true, desc: Lang.UV_DESC}, (async (message, match) => {    
+CBot.addCommand({pattern: 'unvoice', fromMe: true, desc: Lang.UV_DESC}, (async (message, match) => {    
     if (message.reply_message === false);
     var location = await message.client.downloadAndSaveMediaMessage({
         key: {
@@ -137,7 +137,7 @@ Asena.addCommand({pattern: 'unvoice', fromMe: true, desc: Lang.UV_DESC}, (async 
             await message.sendMessage(fs.readFileSync('output.mp3'), MessageType.audio, {mimetype: Mimetype.mp4Audio, ptt: true});
 });}));
 
-Asena.addCommand({pattern: '2 ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
+CBot.addCommand({pattern: '2 ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
     if (message.reply_message === false);
     var location = await message.client.downloadAndSaveMediaMessage({
         key: {
@@ -154,7 +154,7 @@ let id = match[1];
             await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg});
 });}));
 
-Asena.addCommand({pattern: '1', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
+CBot.addCommand({pattern: '1', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
     if (message.reply_message === false);
     var location = await message.client.downloadAndSaveMediaMessage({
         key: {
@@ -171,7 +171,7 @@ Asena.addCommand({pattern: '1', fromMe: true, dontAddCommandList: true}, (async 
             await message.sendMessage(fs.readFileSync('output.mp4'), MessageType.video, {mimetype: Mimetype.mpeg});
 });}));
 
-Asena.addCommand({pattern: 'unimage', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
+CBot.addCommand({pattern: 'unimage', fromMe: true, dontAddCommandList: true}, (async (message, match) => {    
     if (message.reply_message === false) return await message.sendMessage("Tag an image");
     var downloading = await message.client.sendMessage(message.jid,"```Downloading & Uploading...```",MessageType.text);
     var location = await message.client.downloadAndSaveMediaMessage({

@@ -1,4 +1,4 @@
-const Asena = require('../events');
+const CBot = require('../events');
 const { MessageType, MessageOptions, Mimetype } = require('@adiwajshing/baileys');
 const fs = require('fs');
 const axios = require('axios');
@@ -7,7 +7,7 @@ const NEED_WORD = "*Must Enter some Words*"
 
 let whb = Config.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({ pattern: 'random ?(.*)', fromMe: whb, desc: 'word image' }, (async (message, match) => {
+CBot.addCommand({ pattern: 'random ?(.*)', fromMe: whb, desc: 'word image' }, (async (message, match) => {
 
     var r_text = new Array ();
 

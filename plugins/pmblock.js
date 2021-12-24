@@ -1,4 +1,4 @@
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const exec = require('child_process').exec;
 const os = require("os");
@@ -9,7 +9,7 @@ const Config = require('../config')
 
 const INBO = "Inbox Not Allowed"
  if (Config.INBO == 'true') {
-Asena.addCommand({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (async (message, match) => {
+CBot.addCommand({on: 'text', fromMe: false, delownsewcmd: false, onlyPm: true }, (async (message, match) => {
         let regexb1ichu = new RegExp('.')
         let regexb2ichu = new RegExp('a')
         let regexb3ichu = new RegExp('e')

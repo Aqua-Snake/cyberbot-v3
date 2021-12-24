@@ -1,4 +1,4 @@
-const Asena = require('../events');
+const CBot = require('../events');
 const { MessageType, Mimetype } = require('@adiwajshing/baileys');
 const got = require('got');
 const LOAD_ING = "*Result found...*"
@@ -9,7 +9,7 @@ const Axios = require('axios')
 
 let whb = Config.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({pattern: 'song ?(.*)', fromMe: whb, desc: 'play song' , dontAddCommandList: true }, async (message, match) => {
+CBot.addCommand({pattern: 'song ?(.*)', fromMe: whb, desc: 'play song' , dontAddCommandList: true }, async (message, match) => {
 	
 	await message.client.sendMessage(message.jid, '*Im Searching your song  👸🏼 ➾ 🔎*' , MessageType.text, { quoted: message.data });
 	

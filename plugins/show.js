@@ -1,5 +1,5 @@
 
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const got = require('got');
 const fs = require('fs');
@@ -12,7 +12,7 @@ const { errorMessage, infoMessage } = require('../helpers');
 
 let whb = Config.WORKTYPE == 'public' ? false : true
 
-Asena.addCommand({ pattern: 'joox ?(.*)', fromMe: whb, dontAddCommandList: true}, async (message, match) => {
+CBot.addCommand({ pattern: 'joox ?(.*)', fromMe: whb, dontAddCommandList: true}, async (message, match) => {
 
     const userName = match[1]
 
@@ -47,7 +47,7 @@ Asena.addCommand({ pattern: 'joox ?(.*)', fromMe: whb, dontAddCommandList: true}
 
 
 
- Asena.addCommand({ pattern: 'rest ?(.*)', fromMe: whb,  dontAddCommandList: true, desc: Lang.DESC }, (async (message, match) => {
+ CBot.addCommand({ pattern: 'rest ?(.*)', fromMe: whb,  dontAddCommandList: true, desc: Lang.DESC }, (async (message, match) => {
         if (match[0].includes('install')) return;
         if (match[1] === '') return await message.client.sendMessage(message.jid, Lang.NEED_WORD, MessageType.text, { quoted: message.data });
         if (!match[1].includes('www.instagram.com')) return await message.client.sendMessage(message.jid, Lang.NEED_WORD, MessageType.text, { quoted: message.data });
@@ -74,7 +74,7 @@ Asena.addCommand({ pattern: 'joox ?(.*)', fromMe: whb, dontAddCommandList: true}
 
 
 
-Asena.addCommand({ pattern: 'twt ?(.*)', fromMe: whb,  dontAddCommandList: true, desc: "download from twitter links" }, async (message, match) => {
+CBot.addCommand({ pattern: 'twt ?(.*)', fromMe: whb,  dontAddCommandList: true, desc: "download from twitter links" }, async (message, match) => {
 
     const userName = match[1]
 
@@ -113,7 +113,7 @@ Asena.addCommand({ pattern: 'twt ?(.*)', fromMe: whb,  dontAddCommandList: true,
 
 
 
-Asena.addCommand({ pattern: 'show ?(.*)', fromMe: whb, desc: "Get info related to tv series and shows"}, async (message, match) => {
+CBot.addCommand({ pattern: 'show ?(.*)', fromMe: whb, desc: "Get info related to tv series and shows"}, async (message, match) => {
 
     const userName = match[1]
 
@@ -144,7 +144,7 @@ Asena.addCommand({ pattern: 'show ?(.*)', fromMe: whb, desc: "Get info related t
   },
 )
 
-Asena.addCommand({ pattern: 'show ?(.*)', fromMe: whb, dontAddCommandList: true}, async (message, match) => {
+CBot.addCommand({ pattern: 'show ?(.*)', fromMe: whb, dontAddCommandList: true}, async (message, match) => {
 
  const userName = match[1]
     

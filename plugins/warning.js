@@ -1,4 +1,4 @@
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 const GM = "Warning message 0"
 const GN = "warning message 0"
@@ -7,7 +7,7 @@ const Config = require('../config');
 
 
 if (Config.WORKTYPE == 'private') {
-Asena.addCommand({pattern: 'rwarn', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
+CBot.addCommand({pattern: 'rwarn', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
 
     var r_text = new Array ();
 
@@ -23,7 +23,7 @@ Asena.addCommand({pattern: 'rwarn', fromMe: true, deleteCommand: true, desc: GM,
     }));
 
 
-Asena.addCommand({pattern: 'rwarn', fromMe: true, deleteCommand: true, desc: GN,}, (async (message, match) => {
+CBot.addCommand({pattern: 'rwarn', fromMe: true, deleteCommand: true, desc: GN,}, (async (message, match) => {
 
         var r_text = new Array ();
     
@@ -43,7 +43,7 @@ Asena.addCommand({pattern: 'rwarn', fromMe: true, deleteCommand: true, desc: GN,
     
 
     if (Config.WORKTYPE == 'public') {
-Asena.addCommand({pattern: 'rwarn', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
+CBot.addCommand({pattern: 'rwarn', fromMe: true, deleteCommand: true, desc: GM,}, (async (message, match) => {
 
     var r_text = new Array ();
 

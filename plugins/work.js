@@ -1,6 +1,6 @@
 
 
-const Asena = require('../events');
+const CBot = require('../events');
 const config = require('../config');
 const Heroku = require('heroku-client');
 const heroku = new Heroku({
@@ -26,7 +26,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
       W_PRI = 'ᴡᴏʀᴋ_ᴛʏᴘᴇ ɪꜱ ɴᴏᴡ ᴘʀɪᴠᴀᴛᴇ'
     }
 
- Asena.addCommand({pattern: 'work ?(.*)', fromMe: true,dontAddCommandList: true,desc: 'change bot work type. example - .work public/private/admin' }, (async (message, match) => {
+ CBot.addCommand({pattern: 'work ?(.*)', fromMe: true,dontAddCommandList: true,desc: 'change bot work type. example - .work public/private/admin' }, (async (message, match) => {
         if (match[1] == 'public') {
                 await heroku.patch(baseURI + '/config-vars', { 
                     body: { 

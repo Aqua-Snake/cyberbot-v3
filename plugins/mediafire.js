@@ -1,20 +1,20 @@
 
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
 const { errorMessage, infoMessage } = require('../helpers');
 const Config = require('../config');
 const Language = require('../language');
 const YTV_DESC = "Youtube Video ."
-const YT_NEED = "Necesito que ingreses algún enlace de mediafire para descargar."
-const DWLOAD_VID = "*Descargando... 😜*"
-const YTV_UP = "*Subiendo... 😜*"
-const NO_RESULT = "*no puedo encontrar nada :(...*"
+const YT_NEED = "I need you to enter some mediafire link to download."
+const DWLOAD_VID = "*Downloading...😜*"
+const YTV_UP = "*Going up... 😜*"
+const NO_RESULT = "* I can't find :(...*"
 
 
 if (Config.WORKTYPE == 'private') {
 
-    Asena.addCommand({ pattern: 'mediafire ?(.*)', fromMe: true }, async (message, match) => {
+    CBot.addCommand({ pattern: 'mediafire ?(.*)', fromMe: true }, async (message, match) => {
 
         const link = match[1]
     
@@ -40,7 +40,7 @@ if (Config.WORKTYPE == 'private') {
 }
 
 else if (Config.WORKTYPE == 'public') {
-    Asena.addCommand({ pattern: 'mediafire ?(.*)', fromMe: false }, async (message, match) => {
+    CBot.addCommand({ pattern: 'mediafire ?(.*)', fromMe: false }, async (message, match) => {
 
         const link = match[1]
     

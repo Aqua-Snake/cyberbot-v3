@@ -1,11 +1,11 @@
-const Asena = require('../events');
+const CBot = require('../events');
 const {MessageType, MessageOptions, Mimetype} = require('@adiwajshing/baileys');
 const axios = require('axios');
 
 const Language = require('../language');
 const Lang = Language.getString('wallpaper');
 
-Asena.addCommand({pattern: 'setvar', fromMe: true, desc: Lang.WP}, (async (message, match) => {
+CBot.addCommand({pattern: 'menusetvar', fromMe: true, desc: Lang.WP}, (async (message, match) => {
 
     var r_text = new Array ();
     

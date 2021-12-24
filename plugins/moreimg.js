@@ -1,6 +1,6 @@
 
 
-const Asena = require('../events');
+const CBot = require('../events');
 const {WAConnection, MessageOptions, MessageType, Mimetype, Presence} = require('@adiwajshing/baileys');
 const fs = require('fs');
 const axios = require('axios');
@@ -8,13 +8,13 @@ const Config = require('../config');
 
 if (Config.WORKTYPE == 'private') {
 
-Asena.addCommand({pattern: 'moretxt', fromMe: true, desc: 'more txtit commands'}, (async (message, match) => {
+CBot.addCommand({pattern: 'moretxt', fromMe: true, desc: 'more txtit commands'}, (async (message, match) => {
   
   await message.sendMessage('\n\n\n🐼command : .break\n🦋desc : change your text to wall breaking image.\n\n🐼command : .2glitch\n🌴desc : Makes Pubg logo with your name🐼command : .phub\n🦋desc : change your text into pornhub logo.\n🏷️example : .phuh BOT;X.\n\n🐼command : .blood\n🦋desc : change your text frozen blood on a glass\n\n🐼command : .1917\n🦋desc : change your text to a 1917 model image\n\n🐼command : .maskman\n🦋desc : change your text to mask man bg\n🏷️example : .avengers its;BOT X.\n\n🐼command : .boxed\n🦋desc : change your text to 3d boxed design\n\n🐼command : .window\n🦋desc : write your text on a foggy window \n\n🐼command : .skywal\n🦋desc : random sky wallpaper with given text\n\n🐼command : .holo\n🦋desc : change your text to holo design\n\n🐼command : .drop\n🦋desc : change your text into rain water drop.n\n🐼command : .flame\n🦋desc : text with fire effect.\n\n🐼command : .vtext\n🦋desc : text to video.\n\n🐼command : .ptext\n🦋desc : text to video.\n\n🐼command : .colortext\n🦋desc : text to colorfull video\n\n🐼command : .cloud\n🦋desc : text on cloud\n\n🐼command : .2ninja\n🦋desc : random ninja logo with given name.');
   
 }));
 
-Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+CBot.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD);
 
@@ -24,7 +24,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
 }));
   
-  Asena.addCommand({pattern: 'phub ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+  CBot.addCommand({pattern: 'phub ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
   
@@ -41,7 +41,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
     }));
   
-   Asena.addCommand({pattern: 'blood ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+   CBot.addCommand({pattern: 'blood ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -51,7 +51,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
     }));
   
-    Asena.addCommand({pattern: '2glitch  ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: '2glitch  ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
       if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
   
@@ -62,7 +62,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
       }));
 
     
-      Asena.addCommand({pattern: 'battle  ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+      CBot.addCommand({pattern: 'battle  ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
     
@@ -71,7 +71,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
        await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.ALL})
     
         }));
-  Asena.addCommand({pattern: '1917 ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+  CBot.addCommand({pattern: '1917 ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -81,7 +81,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
     }));
   
-   Asena.addCommand({ pattern: 'maskman?(.*)', fromMe: true,dontAddCommandList: true }, (async (message, match) => {
+   CBot.addCommand({ pattern: 'maskman?(.*)', fromMe: true,dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(need);
 
@@ -92,7 +92,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
     }));
   
    
-         Asena.addCommand({pattern: 'boxed ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+         CBot.addCommand({pattern: 'boxed ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -102,7 +102,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
 }));
   
-  Asena.addCommand({pattern: 'ffire ?(.*)', fromMe: true, dontAddCommandList: false, desc: 'add your text to random freefire logo'}, (async (message, match) => {
+  CBot.addCommand({pattern: 'ffire ?(.*)', fromMe: true, dontAddCommandList: false, desc: 'add your text to random freefire logo'}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -112,7 +112,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
 }));
   
-  Asena.addCommand({pattern: 'window ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+  CBot.addCommand({pattern: 'window ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
   
@@ -122,7 +122,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
     }));
   
-   Asena.addCommand({pattern: 'skywal ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+   CBot.addCommand({pattern: 'skywal ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD);
 
@@ -132,7 +132,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
 }));
   
-   Asena.addCommand({pattern: 'holo ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+   CBot.addCommand({pattern: 'holo ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -142,7 +142,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
     }));
 
-    Asena.addCommand({pattern: '2ninja ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: '2ninja ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD);
 
@@ -152,7 +152,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
    }));
   
-   Asena.addCommand({pattern: 'drop ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+   CBot.addCommand({pattern: 'drop ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -161,7 +161,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.ALL})
 
     }));
-   Asena.addCommand({pattern: 'cloud ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+   CBot.addCommand({pattern: 'cloud ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -171,7 +171,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
     }));
 
- Asena.addCommand({pattern: 'emoji ?(.*)', fromMe: true, dontAddCommandList: false}, (async (message, match) => {
+ CBot.addCommand({pattern: 'emoji ?(.*)', fromMe: true, dontAddCommandList: false}, (async (message, match) => {
 
       if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD, MessageType.text);
         
@@ -188,7 +188,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
   
     }));
 
-    Asena.addCommand({ pattern: 'pubg ?(.*)', fromMe: true,dontAddCommandList: true }, (async (message, match) => {
+    CBot.addCommand({ pattern: 'pubg ?(.*)', fromMe: true,dontAddCommandList: true }, (async (message, match) => {
 
       if (match[1] === '') return await message.sendMessage(need);
         var topText, bottomText;
@@ -204,7 +204,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
   }));
 
-    Asena.addCommand({pattern: 'flame ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'flame ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -214,7 +214,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
     }));
 
-    Asena.addCommand({pattern: 'vtext ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'vtext ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -224,7 +224,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
     }));
 
-    Asena.addCommand({pattern: 'ptext ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'ptext ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -234,7 +234,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
     }));
 
-    Asena.addCommand({pattern: 'colortext ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'colortext ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -247,13 +247,13 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: true, dontAddCommandList: true
 
 else if (Config.WORKTYPE == 'public') {
 
-Asena.addCommand({pattern: 'moretxt', fromMe: false, desc: 'more txtit commands'}, (async (message, match) => {
+CBot.addCommand({pattern: 'moretxt', fromMe: false, desc: 'more txtit commands'}, (async (message, match) => {
   
   await message.sendMessage('\n\n\n🐼command : .break\n🦋desc : change your text to wall breaking image.\n\n🐼command : .phub\n🦋desc : change your text into pornhub logo.\n🏷️example : .phuh BOT;X.\n\n🐼command : .blood\n🦋desc : change your text frozen blood on a glass\n\n🐼command : .1917\n🦋desc : change your text to a 1917 model image\n\n🐼command : .avengers\n🦋desc : change your text to avangers logo\n🏷️example : .avengers its;BOT X.\n\n🐼command : .boxed\n🦋desc : change your text to 3d boxed design\n\n🐼command : .window\n🦋desc : write your text on a foggy window \n\n🐼command : .skywal\n🦋desc : random sky wallpaper with given text\n\n🐼command : .holo\n🦋desc : change your text to holo design\n\n🐼command : .drop\n🦋desc : change your text into rain water drop.n\n🐼command : .flame\n🦋desc : text with fire effect.\n\n🐼command : .vtext\n🦋desc : text to video.\n\n🐼command : .ptext\n🦋desc : text to video.\n\n🐼command : .colortext\n🦋desc : text to colorfull video\n\n🐼command : .cloud\n🦋desc : text on cloud\n\n🐼command : .2ninja\n🦋desc : random ninja logo with given name.');
   
 }));
 
-Asena.addCommand({pattern: 'break ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+CBot.addCommand({pattern: 'break ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD);
 
@@ -263,7 +263,7 @@ Asena.addCommand({pattern: 'break ?(.*)', fromMe: false, dontAddCommandList: tru
 
 }));
 
-Asena.addCommand({ pattern: 'pubg ?(.*)', fromMe: false,dontAddCommandList: true }, (async (message, match) => {
+CBot.addCommand({ pattern: 'pubg ?(.*)', fromMe: false,dontAddCommandList: true }, (async (message, match) => {
 
   if (match[1] === '') return await message.sendMessage(need);
     var topText, bottomText;
@@ -279,7 +279,7 @@ if (match[1].includes(';')) {
 
 }));
   
-  Asena.addCommand({pattern: 'phub ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+  CBot.addCommand({pattern: 'phub ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
   
@@ -296,7 +296,7 @@ if (match[1].includes(';')) {
 
     }));
   
-   Asena.addCommand({pattern: 'blood ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+   CBot.addCommand({pattern: 'blood ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -306,7 +306,7 @@ if (match[1].includes(';')) {
 
     }));
 
-    Asena.addCommand({pattern: '2glitch  ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: '2glitch  ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
       if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
   
@@ -317,7 +317,7 @@ if (match[1].includes(';')) {
       }));
 
     
-      Asena.addCommand({pattern: 'battle  ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+      CBot.addCommand({pattern: 'battle  ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
         if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
     
@@ -327,7 +327,7 @@ if (match[1].includes(';')) {
     
         }));
   
-  Asena.addCommand({pattern: '1917 ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+  CBot.addCommand({pattern: '1917 ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -337,7 +337,7 @@ if (match[1].includes(';')) {
 
     }));
   
-   Asena.addCommand({ pattern: 'maskman?(.*)', fromMe: true,dontAddCommandList: true }, (async (message, match) => {
+   CBot.addCommand({ pattern: 'maskman?(.*)', fromMe: true,dontAddCommandList: true }, (async (message, match) => {
 
         if (match[1] === '') return await message.sendMessage(need);
 
@@ -348,7 +348,7 @@ if (match[1].includes(';')) {
     }));
   
    
-         Asena.addCommand({pattern: 'boxed ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+         CBot.addCommand({pattern: 'boxed ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -358,7 +358,7 @@ if (match[1].includes(';')) {
 
 }));
   
-  Asena.addCommand({pattern: 'ffire ?(.*)', fromMe: false, dontAddCommandList: false, desc: 'add your text to random freefire logo'}, (async (message, match) => {
+  CBot.addCommand({pattern: 'ffire ?(.*)', fromMe: false, dontAddCommandList: false, desc: 'add your text to random freefire logo'}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -368,7 +368,7 @@ if (match[1].includes(';')) {
 
 }));
   
-  Asena.addCommand({pattern: 'window ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+  CBot.addCommand({pattern: 'window ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
   
@@ -378,7 +378,7 @@ if (match[1].includes(';')) {
 
     }));
   
-   Asena.addCommand({pattern: 'skywal ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+   CBot.addCommand({pattern: 'skywal ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD);
 
@@ -388,7 +388,7 @@ if (match[1].includes(';')) {
 
 }));
   
-   Asena.addCommand({pattern: 'holo ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+   CBot.addCommand({pattern: 'holo ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -398,7 +398,7 @@ if (match[1].includes(';')) {
 
     }));
 
-    Asena.addCommand({pattern: '2ninja ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: '2ninja ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD);
 
@@ -408,7 +408,7 @@ if (match[1].includes(';')) {
 
    }));
   
-   Asena.addCommand({pattern: 'drop ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+   CBot.addCommand({pattern: 'drop ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -417,7 +417,7 @@ if (match[1].includes(';')) {
     await message.client.sendMessage(message.jid,Buffer.from(webimage.data), MessageType.image, {mimetype: Mimetype.jpg, caption: Config.ALL})
 
     }));
-   Asena.addCommand({pattern: 'cloud ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+   CBot.addCommand({pattern: 'cloud ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -427,7 +427,7 @@ if (match[1].includes(';')) {
 
     }));
 
- Asena.addCommand({pattern: 'emo ?(.*)', fromMe: false, desc: 'emogi to png'}, (async (message, match) => {
+ CBot.addCommand({pattern: 'emo ?(.*)', fromMe: false, desc: 'emogi to png'}, (async (message, match) => {
 
       if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD, MessageType.text);
         
@@ -444,7 +444,7 @@ if (match[1].includes(';')) {
   
     }));
 
-    Asena.addCommand({pattern: 'flame ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'flame ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -454,7 +454,7 @@ if (match[1].includes(';')) {
 
     }));
 
-    Asena.addCommand({pattern: 'vtext ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'vtext ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -464,7 +464,7 @@ if (match[1].includes(';')) {
 
     }));
 
-    Asena.addCommand({pattern: 'ptext ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'ptext ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -474,7 +474,7 @@ if (match[1].includes(';')) {
 
     }));
 
-    Asena.addCommand({pattern: 'colortext ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'colortext ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
@@ -484,7 +484,7 @@ if (match[1].includes(';')) {
 
     }));
   
-   Asena.addCommand({pattern: 'scary ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+   CBot.addCommand({pattern: 'scary ?(.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,NEED_WORD);
 
