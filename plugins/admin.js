@@ -1553,7 +1553,7 @@ CBot.addCommand({pattern: 'invite ?(.*)', fromMe: true, dontAddCommandList: true
     await message.client.sendMessage(message.jid,Lang.INVITE + ' https://chat.whatsapp.com/' + invite, MessageType.text);
 }));
 
-CBot.addCommand({pattern: 'rename ?(.*)', onlyGroup: true, fromMe: true,desc: Asena}, (async (message, match) => {
+CBot.addCommand({pattern: 'rename ?(.*)', onlyGroup: true, fromMe: true,desc: 'Change the Group name'}, (async (message, match) => {
     var im = await checkImAdmin(message);
     if (!im) return await message.client.sendMessage(message.jid,'i am not admin',MessageType.text);
     if (match[1] === '') return await message.client.sendMessage(message.jid,'changing',MessageType.text);
