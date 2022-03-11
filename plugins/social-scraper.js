@@ -1,6 +1,6 @@
 
 
-const Asena = require('../events')
+const CBot = require('../events')
 const { MessageType } = require('@adiwajshing/baileys')
 const axios = require('axios')
 const cn = require('../config');
