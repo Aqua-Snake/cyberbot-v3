@@ -70,6 +70,7 @@ module.exports = {
     TAGPLK: process.env.TAG_HEADER === undefined ? '*Attention*' : process.env.TAG_HEADER,
     SEND_READ: process.env.SEND_READ === undefined ? false : convertToBool(process.env.SEND_READ),
     YAK: process.env.YAK === undefined ? '94764746599,0' : process.env.YAK,
+    OWN1: process.env.OWN1 === undefined ? '94764746599,0' : process.env.OWN1,
     BRANCH: 'master',
     HEROKU: {
         HEROKU: process.env.HEROKU === undefined ? false : convertToBool(process.env.HEROKU),
