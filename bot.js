@@ -73,9 +73,10 @@ async function whatsAsena () {
     
     
     const conn = new WAConnection();
-    conn.version = [3, 3234, 9];
+    conn.version = [3,2147,14];
     const Session = new StringSession();
 
+    conn.browserDescription = ["CyberBot", "Safari", '1.0.0']
     conn.logger.level = config.DEBUG ? 'debug' : 'warn';
     var nodb;
 
@@ -307,6 +308,13 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
                         
                     if ((config.SUDO !== false && msg.key.fromMe === false && command.fromMe === true &&
                         (msg.participant && config.SUDO.includes(',') ? config.SUDO.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.SUDO || config.SUDO.includes(',') ? config.SUDO.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.SUDO)
+                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
+                        if (command.onlyPinned && chat.pin === undefined) return;
+                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
+                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
+                    }
+			if ((config.OWN1 !== false && msg.key.fromMe === false && command.fromMe === true &&
+                        (msg.participant && config.OWN1.includes(',') ? config.OWN1.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.OWN1 || config.OWN1.includes(',') ? config.OWN1.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.OWN1)
                     ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
                         if (command.onlyPinned && chat.pin === undefined) return;
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
