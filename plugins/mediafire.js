@@ -14,7 +14,7 @@ const NO_RESULT = "* I can't find :(...*"
 
 if (Config.WORKTYPE == 'private') {
 
-    CBot.addCommand({ pattern: 'mediafire ', fromMe: true }, async (message, match) => {
+    CBot.addCommand({ pattern: 'mediafire ?(.*)', fromMe: true }, async (message, match) => {
 
         const link = match[1]
     
@@ -40,7 +40,7 @@ if (Config.WORKTYPE == 'private') {
 }
 
 else if (Config.WORKTYPE == 'public') {
-    CBot.addCommand({ pattern: 'mediafire ', fromMe: false }, async (message, match) => {
+    CBot.addCommand({ pattern: 'mediafire ?(.*)', fromMe: false }, async (message, match) => {
 
         const link = match[1]
     

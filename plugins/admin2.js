@@ -26,7 +26,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
 }
 if (Config.WORKTYPE == 'admin') {
     
-CBot.addCommand({pattern: 'ban ', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.BAN_DESC}, (async (message, match) => {  
+CBot.addCommand({pattern: 'ban ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.BAN_DESC}, (async (message, match) => {  
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN ,MessageType.text ,{quoted: message.data });
@@ -102,7 +102,7 @@ CBot.addCommand({pattern: 'add(?: |$)(.*)', fromMe: false, dontAddCommandList: t
     }
 }));
 
-CBot.addCommand({pattern: 'promote ', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.PROMOTE_DESC}, (async (message, match) => {    
+CBot.addCommand({pattern: 'promote ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.PROMOTE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
@@ -162,7 +162,7 @@ CBot.addCommand({pattern: 'promote ', fromMe: false, dontAddCommandList: true, o
     }
 }));
 
-CBot.addCommand({pattern: 'demote ', fromMe: false, onlyGroup: true, desc: Lang.DEMOTE_DESC, dontAddCommandList: true}, (async (message, match) => {    
+CBot.addCommand({pattern: 'demote ?(.*)', fromMe: false, onlyGroup: true, desc: Lang.DEMOTE_DESC, dontAddCommandList: true}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN ,MessageType.text ,{quoted: message.data });
@@ -194,7 +194,7 @@ CBot.addCommand({pattern: 'demote ', fromMe: false, onlyGroup: true, desc: Lang.
     }
 }));
 
-CBot.addCommand({pattern: 'mute ', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.MUTE_DESC}, (async (message, match) => {    
+CBot.addCommand({pattern: 'mute ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.MUTE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN ,MessageType.text ,{quoted: message.data });
@@ -1552,7 +1552,7 @@ CBot.addCommand({pattern: 'mute ', fromMe: false, dontAddCommandList: true, only
     }
 }));
 
-CBot.addCommand({pattern: 'unmute ', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.UNMUTE_DESC}, (async (message, match) => {    
+CBot.addCommand({pattern: 'unmute ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.UNMUTE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
@@ -1568,7 +1568,7 @@ CBot.addCommand({pattern: 'unmute ', fromMe: false, dontAddCommandList: true, on
     }
 }));
 
-CBot.addCommand({pattern: 'invite ', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.INVITE_DESC}, (async (message, match) => {    
+CBot.addCommand({pattern: 'invite ?(.*)', fromMe: false, dontAddCommandList: true, onlyGroup: true, desc: Lang.INVITE_DESC}, (async (message, match) => {    
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
@@ -1577,7 +1577,7 @@ CBot.addCommand({pattern: 'invite ', fromMe: false, dontAddCommandList: true, on
     await message.client.sendMessage(message.jid,Lang.INVITE + ' https://chat.whatsapp.com/' + invite, MessageType.text);
 }));
 
-CBot.addCommand({pattern: 'rename ', onlyGroup: false, fromMe: true,desc: 'Rename the group name'}, (async (message, match) => {
+CBot.addCommand({pattern: 'rename ?(.*)', onlyGroup: false, fromMe: true,desc: 'Change the Group name'}, (async (message, match) => {
     var im = await checkImAdmin(message);
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });

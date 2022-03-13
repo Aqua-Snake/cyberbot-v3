@@ -104,7 +104,7 @@ if (Config.WORKTYPE == 'private') {
             });
             return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
-    CBot.addCommand({pattern: 'moodai ', fromMe: true, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'moodai ?(.*)', fromMe: true, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
         if (match[1] === '') return await message.sendMessage(Lang.TEXT);
         var resp = await deepai.callStandardApi("sentiment-analysis", {
             text: `${match[1]}`,
@@ -152,7 +152,7 @@ if (Config.WORKTYPE == 'private') {
             });
             return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
-    CBot.addCommand({pattern: 'ttiai ', fromMe: true, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'ttiai ?(.*)', fromMe: true, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
         if (match[1] === '') return await message.sendMessage(Lang.TEXT);
         var resp = await deepai.callStandardApi("text2img", {
             text: `${match[1]}`,
@@ -201,7 +201,7 @@ if (Config.WORKTYPE == 'private') {
             });
             return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
-    CBot.addCommand({pattern: 'textai ', fromMe: true, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'textai ?(.*)', fromMe: true, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
         if (match[1] === '') return await message.sendMessage(Lang.TEXT);
         var resp = await deepai.callStandardApi("text-generator", {
             text: `${match[1]}`,
@@ -313,7 +313,7 @@ else if (Config.WORKTYPE == 'public') {
             });
             return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
-    CBot.addCommand({pattern: 'moodai ', fromMe: false, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'moodai ?(.*)', fromMe: false, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
         if (match[1] === '') return await message.sendMessage(Lang.TEXT);
         var resp = await deepai.callStandardApi("sentiment-analysis", {
             text: `${match[1]}`,
@@ -361,7 +361,7 @@ else if (Config.WORKTYPE == 'public') {
             });
             return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
-    CBot.addCommand({pattern: 'ttiai ', fromMe: false, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'ttiai ?(.*)', fromMe: false, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
         if (match[1] === '') return await message.sendMessage(Lang.TEXT);
         var resp = await deepai.callStandardApi("text2img", {
             text: `${match[1]}`,
@@ -410,7 +410,7 @@ else if (Config.WORKTYPE == 'public') {
             });
             return await message.client.deleteMessage(message.jid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
-    CBot.addCommand({pattern: 'textai ', fromMe: false, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
+    CBot.addCommand({pattern: 'textai ?(.*)', fromMe: false, deleteCommand: false, dontAddCommandList: true}, (async (message, match) => {
         if (match[1] === '') return await message.sendMessage(Lang.TEXT);
         var resp = await deepai.callStandardApi("text-generator", {
             text: `${match[1]}`,

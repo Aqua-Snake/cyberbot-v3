@@ -13,7 +13,7 @@ const Config = require('../config');
 
 if (Config.WORKTYPE == 'private') {
 
-CBot.addCommand({pattern: 'joke ', fromMe: true, desc: 'Get a random joke.'}, async (message, match) => {
+CBot.addCommand({pattern: 'joke ?(.*)', fromMe: true, desc: 'Get a random joke.'}, async (message, match) => {
 	if (match[1] === 'xx') return await message.reply('*Invalid Request*');
 	const url = `https://official-joke-api.appspot.com/random_joke`;
 	try {
@@ -28,7 +28,7 @@ CBot.addCommand({pattern: 'joke ', fromMe: true, desc: 'Get a random joke.'}, as
 }
 else if (Config.WORKTYPE == 'public') {
 
-CBot.addCommand({pattern: 'joke ', fromMe: false, desc: 'Get a random joke.'}, async (message, match) => {
+CBot.addCommand({pattern: 'joke ?(.*)', fromMe: false, desc: 'Get a random joke.'}, async (message, match) => {
 	if (match[1] === 'xx') return await message.reply('*Invalid Request*');
 	const url = `https://official-joke-api.appspot.com/random_joke`;
 	try {

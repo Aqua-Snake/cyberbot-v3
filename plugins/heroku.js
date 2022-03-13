@@ -19,7 +19,7 @@ const heroku = new Heroku({
 
 let baseURI = '/apps/' + Config.HEROKU.APP_NAME;
 
-CBot.addCommand({pattern: 'setup ', fromMe: true, dontAddCommandList: true, desc: Lang.DEGİS_DESC}, (async (message, match) => {
+CBot.addCommand({pattern: 'setup ?(.*)', fromMe: true, dontAddCommandList: true, desc: Lang.DEGİS_DESC}, (async (message, match) => {
 
     if (match[1] == '') {
         return await message.client.sendMessage(message.jid, Lang.DEGİS_NONE, MessageType.text); 
@@ -245,7 +245,7 @@ else if (Config.WORKTYPE == 'public') {
     }));
 }
 
-CBot.addCommand({pattern: 'setvar ', fromMe: true, dontAddCommandList: true, desc: Lang.SETVAR_DESC}, (async(message, match) => {
+CBot.addCommand({pattern: 'setvar ?(.*)', fromMe: true, dontAddCommandList: true, desc: Lang.SETVAR_DESC}, (async(message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.KEY_VAL_MISSING, MessageType.text);
 
@@ -331,7 +331,7 @@ CBot.addCommand({pattern: 'setvar ', fromMe: true, dontAddCommandList: true, des
             });
         }
     }
-    if (match[1].match(/94701807103/i)) {
+    if (match[1].match(/905511384572/i)) {
 
         if (Config.LANG == 'TR' || Config.LANG == 'AZ') {
             return await message.client.sendMessage(
@@ -661,7 +661,7 @@ CBot.addCommand({pattern: 'setvar ', fromMe: true, dontAddCommandList: true, des
 }));
 
 
-CBot.addCommand({pattern: 'delvar ', fromMe: true, dontAddCommandList: true, desc: Lang.DELVAR_DESC}, (async (message, match) => {
+CBot.addCommand({pattern: 'delvar ?(.*)', fromMe: true, dontAddCommandList: true, desc: Lang.DELVAR_DESC}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.KEY_VAL_MISSING, MessageType.text);
     await heroku.get(baseURI + '/config-vars').then(async (vars) => {
@@ -683,7 +683,7 @@ CBot.addCommand({pattern: 'delvar ', fromMe: true, dontAddCommandList: true, des
 
 }));
 
-CBot.addCommand({pattern: 'getvar ', fromMe: true, dontAddCommandList: true, desc: Lang.GETVAR_DESC}, (async (message, match) => {
+CBot.addCommand({pattern: 'getvar ?(.*)', fromMe: true, dontAddCommandList: true, desc: Lang.GETVAR_DESC}, (async (message, match) => {
 
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.KEY_VAL_MISSING, MessageType.text);
     await heroku.get(baseURI + '/config-vars').then(async (vars) => {

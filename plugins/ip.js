@@ -31,7 +31,7 @@ const NOT_FOUNDIP = "```Sorry,I could not your IP 😖```"
 
 if (Config.WORKTYPE == 'private') {
 
- CBot.addCommand({pattern: 'ip ', desc: 'gives you the detail of your IP' ,fromMe: true}, async (message, match) => {
+ CBot.addCommand({pattern: 'ip ?(.*)', desc: 'gives you the detail of your IP' ,fromMe: true}, async (message, match) => {
     
     if (match[1] === '') return await message.reply(NEED_IP);
 	const url = `https://api.techniknews.net/ipgeo/${match[1]}`;
@@ -50,7 +50,7 @@ if (Config.WORKTYPE == 'private') {
         '*📡' + ISP +'* ```' + ipjson.isp+ '```\n' +
         '*🛡' + PROXY +'* ```' + ipjson.proxy+ '```\n' +
         '*📱' + MOBILE +'* ```' + ipjson.mobile+ '```\n'+
-        '*CYBERBOT IP CHECKER*\n', 
+        '*'+Config.BOT+' IP CHECKER*\n', 
         MessageType.text);
 	} 
     catch {
@@ -61,7 +61,7 @@ if (Config.WORKTYPE == 'private') {
 }
 
 else if (Config.WORKTYPE == 'public') {
-    CBot.addCommand({pattern: 'ip ', desc: 'gives you the detail of your IP' ,fromMe: false}, async (message, match) => {
+    CBot.addCommand({pattern: 'ip ?(.*)', desc: 'gives you the detail of your IP' ,fromMe: false}, async (message, match) => {
     
     if (match[1] === '') return await message.reply(NEED_IP);
     const url = `https://api.techniknews.net/ipgeo/${match[1]}`;

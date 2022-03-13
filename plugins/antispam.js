@@ -10,7 +10,7 @@ const CBot = require('../events');
 const {MessageType} = require('@adiwajshing/baileys');
 
 
-CBot.addCommand({pattern: 'antispam ', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+CBot.addCommand({pattern: 'antispam ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
 
   await message.client.sendMessage(message.jid, '.mute', MessageType.text);
   await message.client.sendMessage(message.jid, 'Activating Antispam Mode', MessageType.text);

@@ -18,7 +18,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
     return sonuc.includes(true);
 }
 
-CBot.addCommand({pattern: 'tagall ', fromMe: true, dontAddCommandList: true, desc: Lang.TAGALL_DESC }, (async (message, match) => {
+CBot.addCommand({pattern: 'tagall ?(.*)', fromMe: true, dontAddCommandList: true, desc: Lang.TAGALL_DESC }, (async (message, match) => {
    
     if (!message.reply_message) {
         if (match[1] !== '') {
@@ -66,7 +66,7 @@ else if (Config.WORKTYPE == 'public') {
     
   
     
-    CBot.addCommand({pattern: 'tagall ', fromMe: true, dontAddCommandList: true, desc: Lang.TAGALL_DESC }, (async (message, match) => {
+    CBot.addCommand({pattern: 'tagall ?(.*)', fromMe: true, dontAddCommandList: true, desc: Lang.TAGALL_DESC }, (async (message, match) => {
         
     if (!message.reply_message) {
         if (match[1] !== '') {
@@ -109,7 +109,7 @@ else if (Config.WORKTYPE == 'public') {
     }
 }));
 var stag_dsc = ''
-if (Config.LANG !== 'EN') stag_dsc = 'Sends the replied message to all members in the group.'
+if (Config.LANG !== 'ML') stag_dsc = 'Sends the replied message to all members in the group.'
 if (Config.LANG == 'ML') stag_dsc = 'ഗ്രൂപ്പിലെ എല്ലാ അംഗങ്ങൾക്കും മറുപടി സന്ദേശം അയയ്ക്കുന്നു.'
 
 CBot.addCommand({pattern: 'bc$', fromMe: true, desc: stag_dsc }, (async (message, match) => {
@@ -141,7 +141,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
     return sonuc.includes(true);
 }
     
-    CBot.addCommand({pattern: 'tagall ', fromMe: false, dontAddCommandList: true, desc: Lang.TAGALL_DESC }, (async (message, match) => {
+    CBot.addCommand({pattern: 'tagall ?(.*)', fromMe: false, dontAddCommandList: true, desc: Lang.TAGALL_DESC }, (async (message, match) => {
          var us = await checkUsAdmin(message);
          if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
 
@@ -187,7 +187,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
     }
 }));
     
-     CBot.addCommand({pattern: 'report ', fromMe: false, desc: 'to report someone'}, (async (message, match) => {
+     CBot.addCommand({pattern: 'report ?(.*)', fromMe: false, desc: 'to report someone'}, (async (message, match) => {
         if (match[1] == '') {
             let grup = await message.client.groupMetadata(message.jid);
             var jids = [];

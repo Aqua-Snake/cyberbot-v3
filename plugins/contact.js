@@ -5,7 +5,7 @@ const os = require("os");
 const fs = require('fs');
 const Config = require('../config');
 
-CBot.addCommand({ pattern: 'owner', fromMe: false, desc: 'owner number' }, (async (message, match) => {
+CBot.addCommand({ pattern: 'owner?(.*)', fromMe: false, desc: 'owner number' }, (async (message, match) => {
 
 //coded by saidali
 const vcard = 'BEGIN:VCARD\n' // metadata of the contact card

@@ -17,7 +17,7 @@ CBot.addCommand({pattern: 'welcome$', fromMe: true, desc: Lang.WELCOME_DESC}, (a
     }
 }));
 
-CBot.addCommand({pattern: 'welcome ', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+CBot.addCommand({pattern: 'welcome (.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
     if (match[1] === '') {
         return await message.client.sendMessage(message.jid,Lang.NEED_WELCOME_TEXT);
     } else {
@@ -36,7 +36,7 @@ CBot.addCommand({pattern: 'goodbye$', fromMe: true, desc: Lang.GOODBYE_DESC}, (a
     }
 }));
 
-CBot.addCommand({pattern: 'goodbye ', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+CBot.addCommand({pattern: 'goodbye (.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
     if (match[1] === '') {
         return await message.client.sendMessage(message.jid,Lang.NEED_GOODBYE_TEXT,MessageType.text);
     } else {
@@ -74,7 +74,7 @@ async function checkImAdmin(message, user = message.client.user.jid) {
     }
 }));
 
-CBot.addCommand({pattern: 'welcome ', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+CBot.addCommand({pattern: 'welcome (.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
     if (match[1] === '') {
@@ -97,7 +97,7 @@ CBot.addCommand({pattern: 'goodbye$', fromMe: false, desc: Lang.GOODBYE_DESC}, (
     }
 }));
 
-CBot.addCommand({pattern: 'goodbye ', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
+CBot.addCommand({pattern: 'goodbye (.*)', fromMe: false, dontAddCommandList: true}, (async (message, match) => {
     var us = await checkUsAdmin(message);
     if (!us) return await message.client.sendMessage(message.jid,Lang.PLKADMIN,MessageType.text ,{quoted: message.data });
     if (match[1] === '') {
