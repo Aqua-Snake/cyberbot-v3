@@ -181,47 +181,8 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
             
             return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS ]*\n\n' + announce, MessageType.text);
         }
-        while (getGMTh == 13 && getGMTm == 01) {
-            const {data} = await axios(ansk)
-            const { sken, skml } = data
-                        
-            var announce = ''
-            if (config.LANG == 'EN') announce = sken
-            if (config.LANG == 'ML') announce = skml
-            
-            return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS ]*\n\n' + announce, MessageType.text);
-        }
-        while (getGMTh == 17 && getGMTm == 01) {
-            const {data} = await axios(ansk)
-            const { sken, skml } = data
-                  
-            var announce = ''
-            if (config.LANG == 'EN') announce = sken
-            if (config.LANG == 'ML') announce = skml
-            
-            return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS ]*\n\n' + announce, MessageType.text);
-        }
-        while (getGMTh == 19 && getGMTm == 01) {
-            const {data} = await axios(ansk)
-            const { sken, skml } = data
-                      
-            var announce = ''
-            if (config.LANG == 'EN') announce = sken
-            if (config.LANG == 'ML') announce = skml
-            
-            return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS ]*\n\n' + announce, MessageType.text);
-        }
-           while (getGMTh == 21 && getGMTm == 01) {
-            const {data} = await axios(ansk)
-            const { sken, skml } = data
-                        
-            var announce = ''
-            if (config.LANG == 'EN') announce = sken
-            if (config.LANG == 'ML') announce = skml
-            
-            return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS ]*\n\n' + announce, MessageType.text);
-        }
-    }, 50000);//Thanks to souravkl11
+        
+    }, 50000);
 
     conn.on('chat-update', async m => {
         if (!m.hasNewMessage) return;
