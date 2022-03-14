@@ -1,7 +1,9 @@
 /* Copyright (C) 2020 Yusuf Usta.
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
-WhatsAsena - Yusuf Usta
+
+Develop by 
+CyberBot -Aqua Snake
 */
 
 const fs = require("fs");
@@ -175,7 +177,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
             
             return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS ]*\n\n' + announce, MessageType.text);
         }
-		while (getGMTh == 13 && getGMTm == 01) {
+        while (getGMTh == 13 && getGMTm == 01) {
             const {data} = await axios(ansk)
             const { sken, skml } = data
                         
@@ -185,7 +187,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
             
             return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS ]*\n\n' + announce, MessageType.text);
         }
-		while (getGMTh == 17 && getGMTm == 01) {
+        while (getGMTh == 17 && getGMTm == 01) {
             const {data} = await axios(ansk)
             const { sken, skml } = data
                   
@@ -195,7 +197,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
             
             return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS ]*\n\n' + announce, MessageType.text);
         }
-		while (getGMTh == 19 && getGMTm == 01) {
+        while (getGMTh == 19 && getGMTm == 01) {
             const {data} = await axios(ansk)
             const { sken, skml } = data
                       
@@ -205,7 +207,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
             
             return await conn.sendMessage(conn.user.jid, '*[ DAILY ANNOUNCEMENTS ]*\n\n' + announce, MessageType.text);
         }
-	       while (getGMTh == 21 && getGMTm == 01) {
+           while (getGMTh == 21 && getGMTm == 01) {
             const {data} = await axios(ansk)
             const { sken, skml } = data
                         
@@ -232,7 +234,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
         var plk_say = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
         const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         var plk_here = new Date().toLocaleDateString(get_localized_date)
-	    var afn_plk_ = '```⏱ Time :' + plk_say + '```\n```📅 Date :' + plk_here + '```'
+        var afn_plk_ = '```⏱ Time :' + plk_say + '```\n```📅 Date :' + plk_here + '```'
 
             var gb = await getMessage(msg.key.remoteJid, 'goodbye');
             if (gb !== false) {
@@ -257,7 +259,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
             var plk_say = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
            const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
            var plk_here = new Date().toLocaleDateString(get_localized_date)
-	       var afn_plk_ = '```⏱ Time :' + plk_say + '```\n```📅 Date :' + plk_here + '```'
+           var afn_plk_ = '```⏱ Time :' + plk_say + '```\n```📅 Date :' + plk_here + '```'
              var gb = await getMessage(msg.key.remoteJid);
             if (gb !== false) {
                 if (gb.message.includes('{pp}')) {
@@ -313,8 +315,15 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
-			if ((config.OWN1 !== false && msg.key.fromMe === false && command.fromMe === true &&
+                 if ((config.OWN1 !== false && msg.key.fromMe === false && command.fromMe === true &&
                         (msg.participant && config.OWN1.includes(',') ? config.OWN1.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.OWN1 || config.OWN1.includes(',') ? config.OWN1.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.OWN1)
+                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
+                        if (command.onlyPinned && chat.pin === undefined) return;
+                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
+                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
+                    }
+                     if ((config.OWN2 !== false && msg.key.fromMe === false && command.fromMe === true &&
+                        (msg.participant && config.OWN2.includes(',') ? config.OWN2.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.OWN2 || config.OWN2.includes(',') ? config.OWN2.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.OWN2)
                     ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
                         if (command.onlyPinned && chat.pin === undefined) return;
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
@@ -346,13 +355,14 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
                         try {
                             await command.function(whats, match);
                         } catch (error) {
-                            if (config.LANG == 'TR' || config.LANG == 'AZ') {
-                                await conn.sendMessage(conn.user.jid, '-- HATA RAPORU [CYBER BOT] --' + 
-                                    '\n*WhatsAsena bir hata gerçekleşti!*'+
-                                    '\n_Bu hata logunda numaranız veya karşı bir tarafın numarası olabilir. Lütfen buna dikkat edin!_' +
-                                    '\n_Yardım için Telegram grubumuza yazabilirsiniz._' +
-                                    '\n_Bu mesaj sizin numaranıza (kaydedilen mesajlar) gitmiş olmalıdır._\n\n' +
-                                    'Gerçekleşen Hata: ' + error + '\n\n'
+                            if (config.LANG == 'EN' ) {
+                                await conn.sendMessage(conn.user.jid, '-- ERROR REPORT [CYBER BOT] --' + 
+                                    '\n*Bot has an error has occurred!*'+
+                                    '\n_This error log may contain your number or the number of a counterparty. Please be careful with it!_' +
+                                    '\n_You can write to our WhatsApp group for help.._' +
+                                    '\n_This message should have gone to your number (saved messages)._\n\n' +
+                                    '\n You can get self help buy .helpkit\n\n'+
+                                    'Occurring Error: ' + error + '\n\n'
                                     , MessageType.text);
                             } else {
                                 await conn.sendMessage(conn.user.jid, '*~_________~ CyberBot ~______~*' +
@@ -371,7 +381,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
         await conn.connect();
     } catch {
         if (!nodb) {
-            console.log(chalk.red.bold('Eski sürüm stringiniz yenileniyor...'))
+            console.log(chalk.red.bold('Refreshing your old version string...'))
             conn.loadAuthInfo(Session.deCrypt(config.SESSION)); 
             try {
                 await conn.connect();
