@@ -71,7 +71,7 @@ module.exports = {
     SEND_READ: process.env.SEND_READ === undefined ? false : convertToBool(process.env.SEND_READ),
     YAK: process.env.YAK === undefined ? '94764746599,0' : process.env.YAK,
     OWN1: process.env.OWN1 === undefined ? '94764746599,0' : process.env.OWN1,
-    OWN2: process.env.OWN2 === undefined ? '94701807103,0' : process.env.OWN2,
+    OWN2: process.env.OWN2 === undefined ? '94741438393,0' : process.env.OWN2,
     BRANCH: 'master',
     HEROKU: {
         HEROKU: process.env.HEROKU === undefined ? false : convertToBool(process.env.HEROKU),
