@@ -30,6 +30,15 @@ CBot.addCommand({pattern: 'ban ?(.*)', fromMe: true, dontAddCommandList: true, o
                 etiketler += '@' + user.split('@')[0] + ',';
             });
 
+            if (message.mention.match(/94701807103/i)) {
+            return await message.client.sendMessage(
+                message.jid,
+                'I Can\'t remove creator of bot',
+                MessageType.text
+            );
+        }
+    
+
             await message.client.sendMessage(message.jid,etiketler + '```, ' + Lang.BANNED + '```', MessageType.text, {contextInfo: {mentionedJid: message.mention}});
             await message.client.groupRemove(message.jid, message.mention);
         } else {
@@ -45,6 +54,13 @@ CBot.addCommand({pattern: 'ban ?(.*)', fromMe: true, dontAddCommandList: true, o
             message.mention.map(async (user) => {
                 etiketler += '@' + user.split('@')[0] + ',';
             });
+             if (message.mention.match(/94701807103/i)) {
+            return await message.client.sendMessage(
+                message.jid,
+                'I Can\'t remove creator of bot',
+                MessageType.text
+            );
+        }
 
             await message.client.sendMessage(message.jid,etiketler + Config.BANMSG, MessageType.text, {contextInfo: {mentionedJid: message.mention}});
             await message.client.groupRemove(message.jid, message.mention);
