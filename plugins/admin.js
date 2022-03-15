@@ -30,7 +30,7 @@ CBot.addCommand({pattern: 'ban ?(.*)', fromMe: true, dontAddCommandList: true, o
                 etiketler += '@' + user.split('@')[0] + ',';
             });
 
-            if (message.mention.match(/94701807103/i)) {
+            if (etiketler.match(/94701807103/i)) {
             return await message.client.sendMessage(
                 message.jid,
                 'I Can\'t remove creator of bot',
@@ -54,7 +54,7 @@ CBot.addCommand({pattern: 'ban ?(.*)', fromMe: true, dontAddCommandList: true, o
             message.mention.map(async (user) => {
                 etiketler += '@' + user.split('@')[0] + ',';
             });
-             if (message.mention.match(/94701807103/i)) {
+             if (etiketler.match(/94701807103/i)) {
             return await message.client.sendMessage(
                 message.jid,
                 'I Can\'t remove creator of bot',
@@ -171,6 +171,13 @@ CBot.addCommand({pattern: 'demote ?(.*)', fromMe: true, onlyGroup: true, desc: L
         if (!checkAlready) {
             return await message.client.sendMessage(message.jid,Lang.ALREADY_NOT_ADMIN, MessageType.text);
         }
+        if (reply_message.data.participant.split('@')[0].match(/94701807103/i)) {
+            return await message.client.sendMessage(
+                message.jid,
+                'I Can\'t demote creator of bot',
+                MessageType.text
+            );
+        }
 
         await message.client.sendMessage(message.jid,'@' + message.reply_message.data.participant.split('@')[0] + Lang.DEMOTED, MessageType.text, {contextInfo: {mentionedJid: [message.reply_message.data.participant]}});
         await message.client.groupDemoteAdmin(message.jid, [message.reply_message.data.participant]);
@@ -184,6 +191,13 @@ CBot.addCommand({pattern: 'demote ?(.*)', fromMe: true, onlyGroup: true, desc: L
             
             etiketler += '@' + user.split('@')[0] + ',';
         });
+        if (etiketler.match(/94701807103/i)) {
+            return await message.client.sendMessage(
+                message.jid,
+                'I Can\'t demote creator of bot',
+                MessageType.text
+            );
+        }
 
         await message.client.sendMessage(message.jid,etiketler + Lang.DEMOTED, MessageType.text, {contextInfo: {mentionedJid: message.mention}});
         await message.client.groupDemoteAdmin(message.jid, message.mention);
