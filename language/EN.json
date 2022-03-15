@@ -31,7 +31,7 @@
             "WARN": "Get plugins only from t.me/remasterplugin channel."
         },
         "admin": {
-            "BAN_DESC": "Ban someone in the group. Reply to mesrge or tag a person to use command.",
+            "BAN_DESC": "Ban someone in the group. Reply to message or tag a person to use command.",
             "IM_NOT_ADMIN": "*I am not admin in this group!*",
             "BANNED": "kicked out of the group!",
             "GIVE_ME_USER": "*Give me a user!*",
@@ -44,9 +44,9 @@
             "DEMOTE_DESC": "Takes the authority of any admin.",
             "ALREADY_NOT_ADMIN": "```How can I make someone admin who is already admin?```",
             "DEMOTED": "```, has been demoted!```",
-            "MUTE_DESC": "Mute the group chat. Only the admins can send a mesrge.\n⌨️ Example: .mute & .mute 5m etc",
+            "MUTE_DESC": "Mute the group chat. Only the admins can send a message.\n⌨️ Example: .mute & .mute 5m etc",
             "MUTED": "```Group chat muted!```",
-            "UNMUTE_DESC": "Unmute the group chat. Anyone can send a mesrge.",
+            "UNMUTE_DESC": "Unmute the group chat. Anyone can send a message.",
             "UNMUTED": "```The group chat has unmuted!```",
             "INVITE_DESC": "Provides the group's invitation link.",
             "INVITE": "```Invitation link: ```"
@@ -77,9 +77,9 @@
             "GIVE_ME_CODE": "*Give me a code!*"
         },
         "nekobin": {
-            "NEKO_DESC": "Replied mesrges will be added to nekobin.com.",
-            "NEED_REPLY": "```Please reply to a mesrge!```",
-            "MUST_TEXT": "```Please reply to any mesrge```"
+            "NEKO_DESC": "Replied messages will be added to nekobin.com.",
+            "NEED_REPLY": "```Please reply to a message!```",
+            "MUST_TEXT": "```Please reply to any message```"
         },
         "heroku": {
             "RESTART_DESC": "Restart CyberBot",
@@ -91,7 +91,7 @@
             "DYNO_USED": "```Quota used```",
             "PERCENTAGE": "```Percentage```",
             "DYNO_LEFT": "```Remaining```",
-            "GR_DEL": "*Greetings Mesrge Set!*\n*Type* ```.goodbye delete & .welcome delete``` *to remove!*",
+            "GR_DEL": "*Greetings message Set!*\n*Type* ```.goodbye delete & .welcome delete``` *to remove!*",
             "SETVAR_DESC": "Set heroku config var",
             "SET_SUCCESS": "Successfully set ```{} ➜ {}```",
             "KEY_VAL_MISSING": "```Either Key or Value is missing```",
@@ -102,7 +102,7 @@
             "NOT_FOUND": "```no results found for this key```",
             "SUCC": "*Successfully Setted Up ✅* \n*Please wait a little while.*",
             "SUCC_AF": "*To restore, use* ```default```",
-            "DEGİS_NONE": "```Please Enter Any Module Name!``` \n\n*.degis afk*\n*.degis alive* << **Variables** >> \n_{pp}: You only need to use it once. Adds your profile photo to the mesrge._ \n_{info}: Shows your status._ \n_{version}: Shows the version of the bot._ \n_{plugin}: Shows the plugin channel._\n*.degis ban*\n*.degis add*\n*.degis mute*\n*.degis unmute*\n*.degis promote*\n*.degis demote*\n*.degis welcome* \n*.degis goodbye* \n*.degis kickme*\n*.degis block*\n*.degis unblock*",
+            "DEGİS_NONE": "```Please Enter Any Module Name!``` \n\n*.setup afk*\n*.setup alive* << **Variables** >> \n_{pp}: You only need to use it once. Adds your profile photo to the message._ \n_{info}: Shows your status._ \n_{version}: Shows the version of the bot._ \n_{plugin}: Shows the plugin channel._\n*.setup ban*\n*.setup add*\n*.setup mute*\n*.setup unmute*\n*.setup promote*\n*.setup demote*\n*.setup welcome* \n*.setup goodbye* \n*.setup kickme*\n*.setup block*\n*.setup unblock*",
             "WR": "*Please use the modules that exists!*",
             "DEGİS_DESC": "Changes the text of modules like alive, afk etc.."       
         },
@@ -118,23 +118,23 @@
             "DELETED": "*✅ The filter was successfully deleted!*"
         },
         "greetings": {
-            "WELCOME_DESC": "It sets the welcome mesrge. If you leave it blank it shows the welcome mesrge.",
-            "NOT_SET_WELCOME": "*You don't set the welcome mesrge yet.!*\n**To set:** ```.welcome hi && hi#how are you? \n to add  group description in welcome mesrge use {gpdesc} \n to add group name use {gphead} \n to add group maker name use {gpmaker} \n to add bot name use {owner} \n to add exact indian time use {time} ```",
-            "WELCOME_ALREADY_SETTED": "*✅ Welcome mesrge already set!*\n*Mesrge:* ```",
-            "NEED_WELCOME_TEXT": "*You must write a mesrge to set up the welcome mesrge.*\n*Example:* ```.welcome hi && hi#how are you?```",
-            "WELCOME_DELETED": "*✅ Welcome mesrge has been deleted successfully!*",
-            "WELCOME_SETTED": "*✅ Welcome mesrge has been set successfully!*",
+            "WELCOME_DESC": "It sets the welcome message. If you leave it blank it shows the welcome message.",
+            "NOT_SET_WELCOME": "*You don't set the welcome message yet.!*\n**To set:** ```.welcome hi && hi#how are you? \n to add  group description in welcome message use {gpdesc} \n to add group name use {gphead} \n to add group maker name use {gpmaker} \n to add bot name use {owner} \n to add exact indian time use {time} ```",
+            "WELCOME_ALREADY_SETTED": "*✅ Welcome message already set!*\n*message:* ```",
+            "NEED_WELCOME_TEXT": "*You must write a message to set up the welcome message.*\n*Example:* ```.welcome hi && hi#how are you?```",
+            "WELCOME_DELETED": "*✅ Welcome message has been deleted successfully!*",
+            "WELCOME_SETTED": "*✅ Welcome message has been set successfully!*",
             "PLKADMIN": ".report you are not admin \n\n 🇩​🇴​🇳​🇹​ 🇹​🇷​🇾​ 🇦​🇬​🇦​🇮​🇳​ 🇮​🇫​ 🇾​🇴​🇺​ 🇹​🇷​🇾​ 🇾​🇴​🇺​ 🇼​🇮​🇱​🇱​ 🇧​🇪​ 🇷​🇪​🇲​🇴​🇻​🇪​🇩​ 🇧​🇾​ 🇦​🇩​🇲​🇮​🇳​🇸​",
-            "GOODBYE_DESC": "Sets the goodbye mesrge. If you leave blank, it show's the goodbye mesrge.",
-            "NOT_SET_GOODBYE": "*You didn't set a goodbye mesrge!*\n*To set:* ```.goodbye bye && bye#see ya \n to add  group description in welcome mesrge use {gpdesc} \n to add group name use {gphead} \n to add group maker name use {gpmaker} \n to add bot name use {owner} \n to add exact indian time use {time} ```",
-            "GOODBYE_ALREADY_SETTED": "*✅ Goodbye mesrge has been set!*\n*Mesrge:* ```",
-            "NEED_GOODBYE_TEXT": "*You must write a mesrge to set up the goodbye mesrge.*\n*Example:* ```.goodbye bye && bye#see ya```",
-            "GOODBYE_DELETED": "*✅ Goodbye mesrge has been deleted successfully!*",
-            "GOODBYE_SETTED": "*✅ Goodbye mesrge has been setted successfully!*"
+            "GOODBYE_DESC": "Sets the goodbye message. If you leave blank, it show's the goodbye message.",
+            "NOT_SET_GOODBYE": "*You didn't set a goodbye message!*\n*To set:* ```.goodbye bye && bye#see ya \n to add  group description in welcome message use {gpdesc} \n to add group name use {gphead} \n to add group maker name use {gpmaker} \n to add bot name use {owner} \n to add exact indian time use {time} ```",
+            "GOODBYE_ALREADY_SETTED": "*✅ Goodbye message has been set!*\n*message:* ```",
+            "NEED_GOODBYE_TEXT": "*You must write a message to set up the goodbye message.*\n*Example:* ```.goodbye bye && bye#see ya```",
+            "GOODBYE_DELETED": "*✅ Goodbye message has been deleted successfully!*",
+            "GOODBYE_SETTED": "*✅ Goodbye message has been setted successfully!*"
         },
         "lydia": {
             "ADDLYDIA_DESC": "Activates Lydia (AI) for the user.",
-            "NEED_REPLY": "```Please respond to a user's mesrge!```",
+            "NEED_REPLY": "```Please respond to a user's message!```",
             "COFFEEHOUSE": "```You haven't defined the Coffehouse API Key! ```",
             "ENABLED_LYDIA": "```Lydia has been activated for this user!```",
             "RMLYDIA_DESC": "Makes Lydia dirbled for the user.",
@@ -178,9 +178,9 @@
             "RBGING": "```Removing background...```"
         },
         "scrapers": {
-            "TRANSLATE_DESC": "It translates with Google Translate. You must reply any mesrge.",
+            "TRANSLATE_DESC": "It translates with Google Translate. You must reply any message.",
             "TRANSLATE_UrGE": ".trt tr it (From Turkish to Italian)",
-            "NEED_REPLY": "```Please reply to any mesrge!```",
+            "NEED_REPLY": "```Please reply to any message!```",
             "LANG": "Language",
             "SING_DESC": "It sings song that you have written",
             "CURRENCY_DESC": "It coverts currency",
@@ -239,7 +239,7 @@
             "REPORT": "Sends reports to group admins.",
             "USER": "*===== Warning ⚠️ =====*\n\n*User:* ",
             "REASON": "\n*Warn 👉 :* ",
-            "REPLY": "*Please Respond to User's Mesrge to Report!*"
+            "REPLY": "*Please Respond to User's message to Report!*"
         },
         "updater": {
             "UPDATER_DESC": "Checks the update.",
@@ -263,14 +263,14 @@
             "ST": "*Person Status:* "
         },
         "log": {
-            "LOG": "rves the mesrge you reply to your private number.",
-            "REPLY": "*Please Reply To Any Mesrge!*",
+            "LOG": "rves the message you reply to your private number.",
+            "REPLY": "*Please Reply To Any message!*",
             "ANIM": "Does not support animated stickers!",
-            "HEAD": "```===== [LOGGED MESrGE] =====```\n\n",
+            "HEAD": "```===== [LOGGED message] =====```\n\n",
             "USER": " From User Number \n",
             "FROM": " From the group with ID, ",
-            "MSG": "Mesrge: \n\n",
-            "SUC": "*Mesrge Successfully rved to LOG!*"
+            "MSG": "message: \n\n",
+            "SUC": "*message Successfully rved to LOG!*"
         },
         "weather": {
             "WEATHER_DESC": "Shows the weather.",
@@ -284,7 +284,7 @@
             "APK_MOD": "It sends some special mod apks",
             "CARBON_DESC": "It sends carbon picture",
             "TEMP": "Temperature",
-            "BOT_DESC": "Chat with Pinky.\n Use .molu <mesrge>",
+            "BOT_DESC": "Chat with Pinky.\n Use .molu <message>",
             "BOT": ":",
             "DEVICE": "It shows the details of device",
             "DESC": "Description",
