@@ -174,7 +174,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
         while (getGMTh == 19 && getGMTm == 01) {
             const {data} = await axios(ansk)
             const { sken, skml } = data
-               //Thanks to souravkl11         
+                       
             var announce = ''
             if (config.LANG == 'EN') announce = sken
             if (config.LANG == 'ML') announce = skml
@@ -253,6 +253,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
         }
 //-----------end 
 
+// ==================== Events ====================
         events.commands.map(
             async (command) =>  {
                 if (msg.message && msg.message.imageMessage && msg.message.imageMessage.caption) {
@@ -308,7 +309,9 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
-  
+  // ==================== End Events ====================
+
+                    // ==================== Message Catcher ====================
                     if (sendMsg) {
                         if (config.SEND_READ && command.on === undefined) {
                             await conn.chatRead(msg.key.remoteJid);
@@ -330,25 +333,145 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
                             await whats.delete(); 
                         }
 */
+// ==================== End Message Catcher ====================
 
+// ==================== Error Message ====================
                         try {
                             await command.function(whats, match);
                         } catch (error) {
-                            if (config.LANG == 'EN' ) {
-                                await conn.sendMessage(conn.user.jid, '-- ERROR REPORT [CYBER BOT] --' + 
-                                    '\n*Bot has an error has occurred!*'+
-                                    '\n_This error log may contain your number or the number of a counterparty. Please be careful with it!_' +
-                                    '\n_You can write to our WhatsApp group for help.._' +
+                            if (config.NOLOG == 'true') return;
+
+                                await conn.sendMessage(conn.user.jid, '*-- ERROR REPORT [CyberBot] --*' + 
+                                    '\n*CyberBot an error has occurred!*'+
+                                    '\n_This error log may include your number or the number of an opponent. Please be careful with it!_' +
+                                    '\n_You can write to our support group for help._' +
+                                    '\n_Aslo you can join our support group:_ https://chat.whatsapp.com/LslosiqH9toHXQUDaew9UR' +
                                     '\n_This message should have gone to your number (saved messages)._\n\n' +
-                                    '\n You can get self help buy .helpkit\n\n'+
-                                    'Occurring Error: ' + error + '\n\n'
-                                    , MessageType.text);
-                            } else {
-                                await conn.sendMessage(conn.user.jid, '*~_________~ CyberBot ~______~*' +
-                                    '\n*Some erors had been occured in new update.if any trouble please contact the bot owner.*' +
-                                    '\n\n*⚠️ ' + error + '*\n'
-                                    , MessageType.text);
-                            }
+                                    '*Error:* ```' + error + '```\n\n'
+                                    , MessageType.text, {detectLinks: false}
+                                );
+                                if (error.message.includes('URL')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _Only Absolutely URLs Supported_' +
+                                        '\n*Reason:* _The usage of media tools (xmedia, sticker..) in the LOG number._' +
+                                        '\n*Solution:* _You can use commands in any chat, except the LOG number._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('conversation')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _Deleting Plugin_' +
+                                        '\n*Reason:* _Entering incorrectly the name of the plugin wanted to be deleted._' +
+                                        '\n*Solution:* _Please try without adding_ *__* _to the plugin you want to delete. If you still get an error, try to add like_ ```?(.*) / $``` _to the end of the name._ '
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('split')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _Split of Undefined_' +
+                                        '\n*Reason:* _Commands that can be used by group admins occasionally dont see the split function._ ' +
+                                        '\n*Solution:* _Restarting will be enough._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('SSL')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _SQL Database Error_' +
+                                        '\n*Reason:* _Database corruption._ ' +
+                                        '\n*Solution:* _There is no known solution. You can try reinstalling it._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('Ookla')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _Ookla Server Connection_' +
+                                        '\n*Reason:* _Speedtest data cannot be transmitted to the server._' +
+                                        '\n*Solution:* _If you use it one more time the problem will be solved._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('params')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _Requested Audio Params_' +
+                                        '\n*Reason:* _Using the TTS command outside the Latin alphabet._' +
+                                        '\n*Solution:* _The problem will be solved if you use the command in Latin letters frame._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('unlink')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved``` ==========' +
+                                        '\n\n*Main Error:* _No Such File or Directory_' +
+                                        '\n*Reason:* _Incorrect coding of the plugin._' +
+                                        '\n*Solution:* _Please check the your plugin codes._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('404')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _Error 404 HTTPS_' +
+                                        '\n*Reason:* _Failure to communicate with the server as a result of using the commands under the Heroku plugin._' +
+                                        '\n*Solution:* _Wait a while and try again. If you still get the error, perform the transaction on the website.._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('reply.delete')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _Reply Delete Function_' +
+                                        '\n*Reason:* _Using IMG or Wiki commands._' +
+                                        '\n*Solution:* _There is no solution for this error. It is not a fatal error._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('load.delete')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _Reply Delete Function_' +
+                                        '\n*Reason:* _Using IMG or Wiki commands._' +
+                                        '\n*Solution:* _There is no solution for this error. It is not a fatal error._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('400')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _Bailyes Action Error_ ' +
+                                        '\n*Reason:* _The exact reason is unknown. More than one option may have triggered this error._' +
+                                        '\n*Solution:* _If you use it again, it may improve. If the error continues, you can try to restart._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('decode')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _Cannot Decode Text or Media_' +
+                                        '\n*Reason:* _Incorrect use of the plug._' +
+                                        '\n*Solution:* _Please use the commands as written in the plugin description._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else if (error.message.includes('unescaped')) {
+                                    return await conn.sendMessage(conn.user.jid, '*⚕️ ERROR ANALYSIS [CyberBot] ⚕️*' + 
+                                        '\n========== ```Error Resolved!``` ==========' +
+                                        '\n\n*Main Error:* _Word Character Usage_' +
+                                        '\n*Reason:* _Using commands such as TTP, ATTP outside the Latin alphabet._' +
+                                        '\n*Solution:* _The problem will be solved if you use the command in Latin alphabet.._'
+                                        , MessageType.text
+                                    );
+                                }
+                                else {
+                                    return await conn.sendMessage(conn.user.jid, '*🙇🏻 Sorry, I Couldnt Read This Error! 🙇🏻*' +
+                                        '\n_You can write to our support group for more help._'
+                                        , MessageType.text
+                                    );
                         }
                     }
                 }
