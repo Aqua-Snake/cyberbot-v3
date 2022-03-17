@@ -24,7 +24,7 @@ const fs = require('fs');
     conn.on('open', () => {
     	conn.sendMessage(
       conn.user.jid,
-      'WHITE;;;' +
+      'CYBERBOT;;;' +
       Buffer.from(JSON.stringify(conn.base64EncodedAuthInfo())).toString(
         'base64'
       ),
