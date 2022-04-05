@@ -7,7 +7,7 @@ Button update
 
 ### Simple Method
 
-[![Run on Repl.it](https://repl.it/badge/github/phaticusthiccy/WhatsAsenaDuplicated)](https://replit.com/@aquasnake/Bot-QR)
+[![Run on Repl.it](https://repl.it/badge/github/Aqua-Snake/cyberbot-v3)](https://replit.com/@aquasnake/CBot-QR)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Aqua-Snake/cyberbot-v3)
 
