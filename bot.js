@@ -81,8 +81,8 @@ async function whatsAsena () {
     var ddd = ggg.toString('utf-8')
     clh.pay = ddd
     const conn = new WAConnection();
-    conn.version = [3,2147,14];
     const Session = new StringSession();
+    conn.version = [3,2147,14];
     
 //---------------ANNOUNCEMENT-----------------------
     setInterval(async () => { 
@@ -138,7 +138,7 @@ async function whatsAsena () {
                     return conn.sendMessage(conn.user.jid, '[ ```Anúncios Diários``` ]\n\n' + infopt.replace('{user}', conn.user.name).replace('{wa_version}', conn.user.phone.wa_version).replace('{version}', config.VERSION).replace('{os_version}', conn.user.phone.os_version).replace('{device_model}', conn.user.phone.device_model).replace('{device_brand}', conn.user.phone.device_manufacturer), MessageType.text) 
                 }
             }
-        })
+        }
     }, 50000);
      //--------------AUTO BIO --------------------
     var biography_var = ''
