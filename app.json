@@ -21,16 +21,6 @@
             "required": true,
             "value": "EN"
         },
-        "BGM_FILTER": {
-            "description": "If you likes bgm you can write 'true'. Otherwise false",
-            "required": false,
-            "value": "true"
-        },
-        "AUTO_DOCUMENT": {
-            "description": "If you likes bgm you can write 'true'. Otherwise false",
-            "required": false,
-            "value": "true"
-        },
         "INBO_BLOCK": {
             "description": "Inbox Blocking System. True koduthal ningalude pml vann chila bad words upoayogikunnavare bot block aakum block aakendengil false kodukuka",
             "required": true,
@@ -196,6 +186,11 @@
             "required": false,
             "value": "\n ```I Am Alive !!!```\n\n```Type``` *.menu* ```for commands  {pp}```"
         },
+        "ALIVE_LOGO" : {
+            "description": "Customizable Alive Logo! Use => default, you can it back",
+            "required": "false",
+            "value": "https://i.ibb.co/h26VWqL/CyberBot.jpg"
+        }
         "BAN_MESSAGE": {
             "description": "Customizable Ban Message! Use => default, to change back.",
             "required": false,
