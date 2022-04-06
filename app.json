@@ -190,7 +190,7 @@
             "description": "Customizable Alive Logo! Use => default, you can it back",
             "required": "false",
             "value": "https://i.ibb.co/h26VWqL/CyberBot.jpg"
-        }
+        },
         "BAN_MESSAGE": {
             "description": "Customizable Ban Message! Use => default, to change back.",
             "required": false,
