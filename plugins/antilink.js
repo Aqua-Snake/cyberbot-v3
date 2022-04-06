@@ -55,6 +55,9 @@ CBot.addCommand({on: 'text', fromMe: false, deleteCommand: false}, (async (messa
         let regex3 = new RegExp('https://meet')
         let regex4 = new RegExp('https://t.co')
         let regex5 = new RegExp('https://t.me')
+        let regex6 = new RegExp('https://')
+        let regex7 = new RegExp('bit.ly/')
+
         if (regex1.test(message.message)) {
             var us = await checkUsAdmin(message)
             var im = await checkImAdmin(message)
@@ -88,6 +91,22 @@ CBot.addCommand({on: 'text', fromMe: false, deleteCommand: false}, (async (messa
             await message.client.groupRemove(message.jid, [message.data.participant])
         }
         else if (regex5.test(message.message)) {
+            var us = await checkUsAdmin(message)
+            var im = await checkImAdmin(message)
+            if (!im) return;
+            if (us) return;
+            await message.client.sendMessage(message.jid,ldc, MessageType.text, {quoted: message.data });
+            await message.client.groupRemove(message.jid, [message.data.participant])
+        }
+        else if (regex6.test(message.message)) {
+            var us = await checkUsAdmin(message)
+            var im = await checkImAdmin(message)
+            if (!im) return;
+            if (us) return;
+            await message.client.sendMessage(message.jid,ldc, MessageType.text, {quoted: message.data });
+            await message.client.groupRemove(message.jid, [message.data.participant])
+        }
+        else if (regex7.test(message.message)) {
             var us = await checkUsAdmin(message)
             var im = await checkImAdmin(message)
             if (!im) return;
