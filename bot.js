@@ -12,6 +12,7 @@ const events = require("./events");
 const chalk = require('chalk');
 const config = require('./config');
 const simpleGit = require('simple-git');
+const Heroku = require('heroku-client');
 const {WAConnection, MessageOptions, MessageType, Mimetype, Presence} = require('@adiwajshing/baileys');
 const {Message, StringSession, Image, Video} = require('./cyberbot/');
 const { DataTypes } = require('sequelize');
