@@ -28,10 +28,6 @@ CBot.addCommand({pattern: 'alive ?(.*)', fromMe: whb, dontAddCommandList: true},
 
   await message.client.sendMessage(message.jid, fs.readFileSync('./media/cyberbot.mp3'), MessageType.audio, {mimetype: 'audio/mp4', ptt:true});
 
-    let pp
-        try { pp = await message.client.getProfilePicture(message.jid.includes('-') ? message.data.participant : message.jid ); } catch { pp = await message.client.getProfilePicture(); }
-        await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => { await message.client.prepareMessage(message.jid, pp, MessageType.image, { thumbnail: pp })
-
 // send a buttons message
 var BUTTHANDLE = '';
     if (/\[(\W*)\]/.test(Build.HANDLERS)) {
@@ -49,15 +45,12 @@ var BUTTHANDLE = '';
           contentText: ' ʜʏ ᴅᴜᴅᴇ....👋🏻\n\n```BOT NAME:``` *'+Config.NBOT+'*\n\n🃏 ᴛɪᴍᴇ   : ```' + plk_say + '```\n🍒 ᴅᴀᴛᴇ : ```' + plk_here + '```\n\n'+Config.ALIVEMSG+'\n\n🃏 ᴄʟɪᴄᴋ ᴍᴇɴᴜ ᴀɴᴅ ᴇɴᴊᴏʏ ᴛʜᴇ ʙᴏᴛ\n',
           footerText: 'ᴄʏʙᴇʀ ʙᴏᴛ © ɢʟᴏʙᴀʟ ᴇᴅɪᴛɪᴏɴ',
           buttons: buttons,
-         headerType: 4,
-        imageMessage: media.message.imageMessage    
-    }
-    await message.client.sendMessage(message.jid, buttonMessage, MessageType.buttonsMessage);
-}))
- let pp
-        try { pp = await message.client.getProfilePicture(message.jid.includes('-') ? message.data.participant : message.jid ); } catch { pp = await message.client.getProfilePicture(); }
-        await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => { await message.client.sendMessage(message.jid, res.data, MessageType.image, { caption: Config.ALIVEMSG }); });
-    }));
+          headerType: 1
+      }
+      
+      await message.client.sendMessage(message.jid, buttonMessage, MessageType.buttonsMessage)
+}));
+
 
 
 
