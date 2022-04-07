@@ -1,23 +1,36 @@
 
 const CBot = require('../events');
-const {MessageType,Mimetype} = require('@adiwajshing/baileys');
+const {MessageType, Mimetype, MessageOptions} = require('@adiwajshing/baileys');
 const {spawnSync} = require('child_process');
 const Config = require('../config');
 const chalk = require('chalk');
 const axios = require('axios');
+const fs = require('fs');
+const os = require('os');
+const request = require('request');
+var clh = { cd: 'L3Jvb3QvV2hhdHNBc2VuYUR1cGxpY2F0ZWQv', pay: '' }    
+var ggg = Buffer.from(clh.cd, 'base64')
+var ddd = ggg.toString('utf-8')
 
 const Language = require('../language');
 const Lang = Language.getString('system_stats');
 
 let whb = Config.WORKTYPE == 'public' ? false : true
 
+    //----------DATE SCANNER---
+
+     var plk_say = new Date().toLocaleString('HI', { timeZone: 'Asia/Kolkata' }).split(' ')[1]
+     const get_localized_date = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+     var plk_here = new Date().toLocaleDateString(get_localized_date)
+     var afnplk = '```⏱ Time :' + plk_say + '```\n\n ```📅 Date :' + plk_here + '```'
+
 CBot.addCommand({pattern: 'alive ?(.*)', fromMe: whb, dontAddCommandList: true}, (async (message, match) => {
 
+  await message.client.sendMessage(message.jid, fs.readFileSync('./media/cyberbot.mp3'), MessageType.audio, {mimetype: 'audio/mp4', ptt:true});
 
-    var logo = await axios.get (Config.ALIVE_LOGO, {responseType: 'arraybuffer'})
-    var PIC = Buffer.from(logo.data)
-
-    const media = await message.client.prepareMessage(message.jid, PIC, MessageType.image, { thumbnail: PIC })
+    let pp
+        try { pp = await message.client.getProfilePicture(message.jid.includes('-') ? message.data.participant : message.jid ); } catch { pp = await message.client.getProfilePicture(); }
+        await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => { await message.client.prepareMessage(message.jid, pp, MessageType.image, { thumbnail: pp })
 
 // send a buttons message
 var BUTTHANDLE = '';
@@ -33,7 +46,7 @@ var BUTTHANDLE = '';
     ]
       
       const buttonMessage = {
-          contentText: '```'+Config.NBOT+'\n\n```'+Config.ALIVEMSG+'\n',
+          contentText: ' ʜʏ ᴅᴜᴅᴇ....👋🏻\n\n```BOT NAME:``` *'+Config.NBOT+'*\n\n🃏 ᴛɪᴍᴇ   : ```' + plk_say + '```\n🍒 ᴅᴀᴛᴇ : ```' + plk_here + '```\n\n'+Config.ALIVEMSG+'\n\n🃏 ᴄʟɪᴄᴋ ᴍᴇɴᴜ ᴀɴᴅ ᴇɴᴊᴏʏ ᴛʜᴇ ʙᴏᴛ\n',
           footerText: 'ᴄʏʙᴇʀ ʙᴏᴛ © ɢʟᴏʙᴀʟ ᴇᴅɪᴛɪᴏɴ',
           buttons: buttons,
          headerType: 4,
@@ -41,7 +54,10 @@ var BUTTHANDLE = '';
     }
     await message.client.sendMessage(message.jid, buttonMessage, MessageType.buttonsMessage);
 }))
-
+ let pp
+        try { pp = await message.client.getProfilePicture(message.jid.includes('-') ? message.data.participant : message.jid ); } catch { pp = await message.client.getProfilePicture(); }
+        await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => { await message.client.sendMessage(message.jid, res.data, MessageType.image, { caption: Config.ALIVEMSG }); });
+    }));
 
 
 
@@ -63,4 +79,3 @@ var BUTTHANDLE = '';
    , MessageType.text, {quoted: message.data});
     
 }));
-
