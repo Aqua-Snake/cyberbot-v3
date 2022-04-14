@@ -1,9 +1,9 @@
-/* Copyright (C) 2020 Aqua Snake.
+/* Copyright (C) 2020 Rivishan Sandeep.
 
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 
-Cyber Bot - Aqua Snake
+Rivishan Bot - Rivishan Sandeep
 */
 
 const { Sequelize } = require('sequelize');
@@ -20,21 +20,21 @@ DEBUG = process.env.DEBUG === undefined ? false : convertToBool(process.env.DEBU
 
 module.exports = {
     VERSION: 'v3.0.1 ɢʟᴏʙᴀʟ ᴇᴅɪᴛɪᴏɴ',
-    CHANNEL: 'https://t.me/Aqua_Snake',
+    TELEGRAM: 'http://t.me/Rivishan3634',
     SESSION: process.env.CBOT_CODE === undefined ? '' : process.env.CBOT_CODE,
     ANTİLİNK: process.env.ANTİ_LİNK === undefined ? 'false' : process.env.ANTİ_LİNK,
     AUTOBİO: process.env.AUTO_BİO === undefined ? 'false' : process.env.AUTO_BİO,
-    GANSTYLE: process.env.GAN_IMAGE === undefined ? 'https://i.ibb.co/h26VWqL/CyberBot.jpg' : process.env.GAN_IMAGE,
+    GANSTYLE: process.env.GAN_IMAGE === undefined ? 'https://i.ibb.co/TcV6Y6w/Small-boy.jpg' : process.env.GAN_IMAGE,
     LANG: process.env.LANGUAGE === undefined ? 'EN' : process.env.LANGUAGE.toUpperCase(),
     ALIVEMSG: process.env.ALIVE_MESSAGE === undefined ? 'default' : process.env.ALIVE_MESSAGE,
     ALIVE_LOGO: process.env.ALIVE_LOGO === undefined ? 'default' : process.env.ALIVE_LOGO,
-    GRPLINK: process.env.GROUP_LINK === undefined ? 'https://chat.whatsapp.com/LslosiqH9toHXQUDaew9UR' : process.env.GROUP_LINK,
+    CONTACT LINK: process.env.GROUP_LINK === undefined ? 'http://wa.me/94789864930' : process.env.CONTACT_LINK,
     KICKMEMSG: process.env.KICKME_MESSAGE === undefined ? 'default' : process.env.KICKME_MESSAGE,
     BLOCKCHAT: process.env.BLOCK_CHAT === undefined ? false : process.env.BLOCK_CHAT,
     WELCOME: process.env.WELCOME === undefined ? 'pp' : process.env.WELCOME,
-    OWNER: process.env.OWNER_NAME === undefined ? 'default' : process.env.OWNER_NAME,
-    ALL: process.env.ALL_CAPTION === undefined ? 'Made By CyberBot' : process.env.ALL_CAPTION,
-    MENTION: process.env.TAG_REPLY === undefined ? '94764746599@s.whatsapp.net' : process.env.TAG_REPLY,
+    OWNER: process.env.OWNER_NAME === undefined ? 'RIVISHAN SANDEEP' : process.env.OWNER_NAME,
+    ALL: process.env.ALL_CAPTION === undefined ? 'Made By Rivishan Bot' : process.env.ALL_CAPTION,
+    MENTION: process.env.TAG_REPLY === undefined ? '94789864930@s.whatsapp.net' : process.env.TAG_REPLY,
     ADDMSG: process.env.ADD_MESSAGE === undefined ? 'default' : process.env.ADD_MESSAGE,
     PLKS: process.env.THERI_LIST === undefined ? false : process.env.THERI_LIST,
     MUTEMSG: process.env.MUTE_MESSAGE === undefined ? 'default' : process.env.MUTE_MESSAGE,
@@ -42,12 +42,12 @@ module.exports = {
     INBO: process.env.INBO_BLOCK === undefined ? 'false' : process.env.INBO_BLOCK,
     INBO1: process.env.INBO_BLOCK === undefined ? 'true' : process.env.INBO_BLOCK,
     BUG_COMMAND: process.env.BOT_BUG === undefined ? 'dead' : process.env.BOT_BUG,
-    LG_LOGO: process.env.LG_LOGO === undefined ? 'https://i.ibb.co/h26VWqL/CyberBot.jpg' : process.env.LG_LOGO,
+    LG_LOGO: process.env.LG_LOGO === undefined ? 'https://i.ibb.co/TcV6Y6w/Small-boy.jpg' : process.env.LG_LOGO,
     DISBGM: process.env.DISABLE_JID_BGM_FILTER === undefined ? false : process.env.DISABLE_JID_BGM_FILTER,
     DOCUMENT: process.env.AUTO_DOCUMENT === undefined ? true : convertToBool(process.env.AUTO_DOCUMENT),
     DISSTICKER: process.env.DISABLE_STICKER === undefined ? false : process.env.DISABLE_STICKER,
-    BOT: process.env.BOT_NAME === undefined ? '⊢‒‒‒ ᴄʏʙᴇʀ ʙᴏᴛ ‒‒‒⊣' : process.env.BOT_NAME,
-    NBOT: process.env.BOT_NM === undefined ? 'ᴄʏʙᴇʀ ʙᴏᴛ' : process.env.BOT_NM,
+    BOT: process.env.BOT_NAME === undefined ? '⊢‒‒‒ ʀɪᴠɪꜱʜᴀɴ ʙᴏᴛ ‒‒‒⊣' : process.env.BOT_NAME,
+    NBOT: process.env.BOT_NM === undefined ? 'ʀɪᴠɪꜱʜᴀɴ ʙᴏᴛ' : process.env.BOT_NM,
     NOLOG: process.env.NO_LOG === undefined ? 'true' : process.env.NO_LOG,
     ADULT_MODE: process.env.ADULT_MODE === undefined ? 'on' : process.env.ADULT_MODE,
     THERI_KICK: process.env.THERI_KICK === undefined ? 'false' : process.env.THERI_KICK,
@@ -70,9 +70,9 @@ module.exports = {
     HANDLERS: process.env.HANDLERS === undefined ? '^[.!;]' : process.env.HANDLERS,
     TAGPLK: process.env.TAG_HEADER === undefined ? '*Attention*' : process.env.TAG_HEADER,
     SEND_READ: process.env.SEND_READ === undefined ? false : convertToBool(process.env.SEND_READ),
-    YAK: process.env.YAK === undefined ? '94764746599,0' : process.env.YAK,
-    OWN1: process.env.OWN1 === undefined ? '94764746599,0' : process.env.OWN1,
-    OWN2: process.env.OWN2 === undefined ? '94741438393,0' : process.env.OWN2,
+    YAK: process.env.YAK === undefined ? '94789864930,0' : process.env.YAK,
+    OWN1: process.env.OWN1 === undefined ? '94789864930,0' : process.env.OWN1,
+    OWN2: process.env.OWN2 === undefined ? '94788780106,0' : process.env.OWN2,
     BRANCH: 'master',
     HEROKU: {
         HEROKU: process.env.HEROKU === undefined ? false : convertToBool(process.env.HEROKU),
@@ -86,7 +86,6 @@ module.exports = {
     SUDO: process.env.SUDO === undefined ? false : process.env.SUDO,
     DEBUG: DEBUG,
     WITAI_API: "TEYMELA6DMC4XB5YM3SPTTQWUUIBKURG",
-     SUPPORT: "94764746599-1629478976",
-    SUPPORT2: "94764746599-1631027903",
-    SUPPORT3: "94764746599-1633103973"
+     SUPPORT: "94789864930",
+    SUPPORT2: "94788780106",
 };
