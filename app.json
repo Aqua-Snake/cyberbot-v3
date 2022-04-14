@@ -1,10 +1,10 @@
 {
-    "name": "Rivi Bot-v3",
-    "description": "Rivi Bot-v3 is the Modified Version of CyberBot.New Experiense.",
+    "name": "Rivishan Bot-v3",
+    "description": "Rivishan Bot-v3 is the Modified Version of Rivishan Bot.New Experiense.",
     "logo": "https://i.ibb.co/TcV6Y6w/Small-boy.jpg",
     "keywords": ["whatsapp", "userbot", "RiviBot", "RBOt", "Rivishan", "bot", "ai"],
     "repository": "https://github.com/RiviMAX/Rivibot-v3",
-    "website":   "https://aqua-snake.github.io/cyberbot",
+    "Telegram":   "http://t.me/Rivishan3634",
     "success_url": "https://github.com/RiviMAX",
     "stack": "container",
     "env": {
