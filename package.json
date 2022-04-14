@@ -1,29 +1,29 @@
 {
-  "name": "CyberBot-v3",
+  "name": "Rivishan-v3",
   "version": "3.0.1",
-  "description": "CyberBot-v3 is the Modified Version of CyberBot",
-  "main": "./cyberbot-v3/bot.js",
+  "description": "Rivishan-v3 is the Modified Version of Rivishan Bot",
+  "main": "./Rivishan-v3/bot.js",
   "scripts": {
     "start": "supervisor -s bot.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Aqua-Snake/cyberbot-v3.git"
+    "url": "git+https://github.com/RiviMAX/Rivibot-v3.git"
   },
   "keywords": [
     "whatsapp",
     "bot",
     "ai",
-    "CyberBot",
-    "cyberbot-v3"
+    "Rivishan Bot",
+    "Rivishan-v3"
   ],
-  "author": "Aqua-Snake",
-  "developer": "@Aqua-Snake",
+  "author": "Rivishan Sandeep",
+  "developer": "@RiviMAX",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/Aqua-Snake/cyberbot-v3/issues"
+    "url": "https://github.com/RiviMAX/Rivibot-v3/issues"
   },
-  "homepage": "https://github.com/Aqua-Snake/cyberbot-v3#readme",
+  "homepage": "https://github.com/RiviMAX/Rivibot-v3#readme",
   "dependencies": {
      "@adiwajshing/baileys": "3.5.3",
     "@lh2020/speedtest-net": "^2.1.1",
